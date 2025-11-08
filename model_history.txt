@@ -52,3 +52,32 @@ Best Model Results (from Early Stopping):
   - Found at Epoch: 38
 --------------------------------------
 
+--- Log Entry: 20251108_175732 ---
+Experiment Name: model_20251108_175732
+SUBMITTED-SCORE: 0.905
+
+Hyperparameters:
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 2
+  - HIDDEN_SIZE: 128
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.001
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+  - STATIC_FEATURES: ['n_legs', 'n_eyes', 'n_hands']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9652
+  - Best Validation Loss: 0.8796
+  - Found at Epoch: 113
+--------------------------------------
+
