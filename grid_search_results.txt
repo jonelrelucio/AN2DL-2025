@@ -1,0 +1,87 @@
+
+
+
+--- Grid Search Results Log ---
+Timestamp: 2025-11-08 21:17:03
+Total Configurations Tested: 2
+Total Runtime: 0:01:28.897665
+-----------------------------------
+BEST CONFIGURATION FOUND (Model Type: Hybrid (Static ON))
+Best Validation F1 Score (Mean across 5 folds): 0.8171
+Parameters:
+  --- FIXED PARAMETERS ---
+  learning_rate       : 0.0001
+  window_size         : 80
+  stride              : 20
+  hidden_layers       : 2
+  hidden_size         : 128
+  rnn_type            : LSTM
+  bidirectional       : True
+  static_hidden_size  : 2
+  use_static_features : True
+  dropout_rate        : 0.3
+  l1_lambda           : 0.0
+  l2_lambda           : 0.001
+  noise_std_dev       : 0.1
+  --- OPTIMAL TUNED PARAMETERS ---
+  batch_size          : 32
+-----------------------------------
+
+
+
+
+--- Grid Search Results Log ---
+Timestamp: 2025-11-08 21:17:03
+Total Configurations Tested: 2
+Total Runtime: 0:01:28.897665
+-----------------------------------
+BEST CONFIGURATION FOUND (Model Type: Hybrid (Static ON))
+Best Validation F1 Score (Mean across 5 folds): 0.8171
+Parameters:
+  --- FIXED PARAMETERS ---
+  learning_rate       : 0.0001
+  window_size         : 80
+  stride              : 20
+  hidden_layers       : 2
+  hidden_size         : 128
+  rnn_type            : LSTM
+  bidirectional       : True
+  static_hidden_size  : 2
+  use_static_features : True
+  dropout_rate        : 0.3
+  l1_lambda           : 0.0
+  l2_lambda           : 0.001
+  noise_std_dev       : 0.1
+  --- OPTIMAL TUNED PARAMETERS ---
+  batch_size          : 32
+-----------------------------------
+
+
+
+
+--- Grid Search Results Log ---
+Timestamp: 2025-11-08 21:17:03
+Total Configurations Tested: 2
+Total Runtime: 0:01:28.897665
+-----------------------------------
+BEST CONFIGURATION FOUND (Model Type: Hybrid (Static ON))
+Best Validation F1 Score (Mean across 5 folds): 0.8171
+Parameters:
+  --- FIXED PARAMETERS ---
+  learning_rate       : 0.0001
+  window_size         : 80
+  stride              : 20
+  hidden_layers       : 2
+  hidden_size         : 128
+  rnn_type            : LSTM
+  bidirectional       : True
+  static_hidden_size  : 2
+  use_static_features : True
+  dropout_rate        : 0.3
+  l1_lambda           : 0.0
+  l2_lambda           : 0.001
+  noise_std_dev       : 0.1
+  --- OPTIMAL TUNED PARAMETERS ---
+  batch_size          : 32
+-----------------------------------
+
