@@ -81,3 +81,35 @@ Best Model Results (from Early Stopping):
   - Found at Epoch: 113
 --------------------------------------
 
+--- Log Entry: 20251108_230211 ---
+Experiment Name: model_20251108_230211
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 64
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 2
+  - HIDDEN_SIZE: 128
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: False
+  - DROPOUT_RATE: 0.1
+  - L2_LAMBDA (Weight Decay): 0.001
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9707
+  - Best Validation Loss: 0.9755
+  - Found at Epoch: 192
+--------------------------------------
+

@@ -85,3 +85,32 @@ Parameters:
   batch_size          : 32
 -----------------------------------
 
+
+
+
+--- Grid Search Results Log ---
+Timestamp: 2025-11-08 21:50:17
+Total Configurations Tested: 24
+Total Runtime: 1:07:17.729358
+-----------------------------------
+BEST CONFIGURATION FOUND (Model Type: Hybrid (Static ON))
+Best Validation F1 Score (Mean across 5 folds): 0.9551
+Parameters:
+  --- FIXED PARAMETERS ---
+  batch_size          : 64
+  window_size         : 80
+  stride              : 20
+  hidden_layers       : 2
+  bidirectional       : False
+  static_hidden_size  : 2
+  use_static_features : True
+  l1_lambda           : 0.0
+  l2_lambda           : 0.001
+  noise_std_dev       : 0.1
+  --- OPTIMAL TUNED PARAMETERS ---
+  learning_rate       : 0.001
+  hidden_size         : 256
+  rnn_type            : LSTM
+  dropout_rate        : 0.1
+-----------------------------------
+
