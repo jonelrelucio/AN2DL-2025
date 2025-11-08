@@ -1,0 +1,25 @@
+--- Log Entry: 20251108_124336 ---
+Experiment Name: model_20251108_124336
+
+Hyperparameters:
+  - EPOCHS: 10
+  - PATIENCE: 50
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 100
+  - STRIDE: 25
+  - HIDDEN_LAYERS: 2
+  - HIDDEN_SIZE: 256
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.001
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.0
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.8014
+  - Best Validation Loss: 0.8153
+  - Found at Epoch: 6
+--------------------------------------
+
