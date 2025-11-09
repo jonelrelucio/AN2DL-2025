@@ -81,3 +81,1109 @@ Best Model Results (from Early Stopping):
   - Found at Epoch: 113
 --------------------------------------
 
+--- Log Entry: 20251108_204343 ---
+Experiment Name: model_20251108_204343
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 10
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 2
+  - HIDDEN_SIZE: 128
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.001
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.8216
+  - Best Validation Loss: 0.6375
+  - Found at Epoch: 9
+--------------------------------------
+
+--- Log Entry: 20251108_223244 ---
+Experiment Name: model_20251108_223244
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 64
+  - WINDOW_SIZE: 40
+  - STRIDE: 10
+  - HIDDEN_LAYERS: 2
+  - HIDDEN_SIZE: 256
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: False
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.001
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9632
+  - Best Validation Loss: 0.6506
+  - Found at Epoch: 15
+--------------------------------------
+
+--- Log Entry: 20251108_230933 ---
+Experiment Name: model_20251108_230933
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 2
+  - HIDDEN_SIZE: 256
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.001
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9729
+  - Best Validation Loss: 0.8090
+  - Found at Epoch: 55
+--------------------------------------
+
+--- Log Entry: 20251108_232305 ---
+Experiment Name: model_20251108_232305
+SUBMITTED-SCORE: 0.930
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9791
+  - Best Validation Loss: 0.5039
+  - Found at Epoch: 122
+--------------------------------------
+
+--- Log Entry: 20251108_233030 ---
+Experiment Name: model_20251108_233030
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 5
+  - HIDDEN_SIZE: 32
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9761
+  - Best Validation Loss: 0.5349
+  - Found at Epoch: 149
+--------------------------------------
+
+--- Log Entry: 20251108_233552 ---
+Experiment Name: model_20251108_233552
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 6
+  - HIDDEN_SIZE: 32
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9735
+  - Best Validation Loss: 0.3869
+  - Found at Epoch: 67
+--------------------------------------
+
+--- Log Entry: 20251108_234117 ---
+Experiment Name: model_20251108_234117
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 6
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9819
+  - Best Validation Loss: 0.4336
+  - Found at Epoch: 109
+--------------------------------------
+
+--- Log Entry: 20251109_001950 ---
+Experiment Name: model_20251109_001950
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 5
+  - HIDDEN_SIZE: [64, 64, 32, 32, 16]
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9795
+  - Best Validation Loss: 0.3526
+  - Found at Epoch: 61
+--------------------------------------
+
+--- Log Entry: 20251109_003150 ---
+Experiment Name: model_20251109_003150
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 6
+  - HIDDEN_SIZE: [64, 32, 32, 32, 8, 8]
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9696
+  - Best Validation Loss: 0.5258
+  - Found at Epoch: 148
+--------------------------------------
+
+--- Log Entry: 20251109_010856 ---
+Experiment Name: model_20251109_010856
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 6
+  - HIDDEN_SIZE: [32, 32, 8, 8, 8, 8]
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.5
+  - L2_LAMBDA (Weight Decay): 0.3
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.2
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9593
+  - Best Validation Loss: 0.4609
+  - Found at Epoch: 198
+--------------------------------------
+
+--- Log Entry: 20251109_012849 ---
+Experiment Name: model_20251109_012849
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 4
+  - HIDDEN_SIZE: [32, 8, 4, 2]
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.5
+  - L2_LAMBDA (Weight Decay): 0.2
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9630
+  - Best Validation Loss: 0.2925
+  - Found at Epoch: 151
+--------------------------------------
+
+--- Log Entry: 20251109_013610 ---
+Experiment Name: model_20251109_013610
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 4
+  - HIDDEN_SIZE: [16, 8, 4, 2]
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.4
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9425
+  - Best Validation Loss: 0.3905
+  - Found at Epoch: 197
+--------------------------------------
+
+--- Log Entry: 20251109_015127 ---
+Experiment Name: model_20251109_015127
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 20
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.01
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 4
+  - HIDDEN_SIZE: [64, 64, 32, 32]
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.4
+  - L2_LAMBDA (Weight Decay): 0.2
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9416
+  - Best Validation Loss: 0.3758
+  - Found at Epoch: 48
+--------------------------------------
+
+--- Log Entry: 20251109_022111 ---
+Experiment Name: model_20251109_022111
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: [32, 32, 16]
+  - RNN_TYPE: GRU
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.9
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9351
+  - Best Validation Loss: 0.4159
+  - Found at Epoch: 259
+--------------------------------------
+
+--- Log Entry: 20251109_101109 ---
+Experiment Name: model_20251109_101109
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9791
+  - Best Validation Loss: 0.5039
+  - Found at Epoch: 122
+--------------------------------------
+
+--- Log Entry: 20251109_102300 ---
+Experiment Name: model_20251109_102300
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.2
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.2
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9849
+  - Best Validation Loss: 0.3854
+  - Found at Epoch: 150
+--------------------------------------
+
+--- Log Entry: 20251109_104142 ---
+Experiment Name: model_20251109_104142
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.2
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.2
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9439
+  - Best Validation Loss: 0.9936
+  - Found at Epoch: 110
+--------------------------------------
+
+--- Log Entry: 20251109_104727 ---
+Experiment Name: model_20251109_104727
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.0
+  - L2_LAMBDA (Weight Decay): 0.2
+  - L1_LAMBDA: 0.1
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.6760
+  - Best Validation Loss: 1.0870
+  - Found at Epoch: 1
+--------------------------------------
+
+--- Log Entry: 20251109_130219 ---
+Experiment Name: model_20251109_130219
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.4
+  - L2_LAMBDA (Weight Decay): 0.2
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9677
+  - Best Validation Loss: 0.8002
+  - Found at Epoch: 171
+--------------------------------------
+
+--- Log Entry: 20251109_143949 ---
+Experiment Name: model_20251109_143949
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+--- Log Entry: 20251109_144636 ---
+Experiment Name: model_20251109_144636
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 2.0
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9787
+  - Best Validation Loss: 0.3916
+  - Found at Epoch: 56
+--------------------------------------
+
+--- Log Entry: 20251109_150816 ---
+Experiment Name: model_20251109_150816
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.5
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9683
+  - Best Validation Loss: 0.9010
+  - Found at Epoch: 98
+--------------------------------------
+
+--- Log Entry: 20251109_152707 ---
+Experiment Name: model_20251109_152707
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 50
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.1
+  - LABEL_SMOOTHING: 0.1
+
+Hyperparameters:
+  - LEARNING_RATE: 0.0001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9563
+  - Best Validation Loss: 0.8178
+  - Found at Epoch: 83
+--------------------------------------
+
+--- Log Entry: 20251109_153922 ---
+Experiment Name: model_20251109_153922
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.1
+
+Hyperparameters:
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9702
+  - Best Validation Loss: 0.7498
+  - Found at Epoch: 21
+--------------------------------------
+
+--- Log Entry: 20251109_154334 ---
+Experiment Name: model_20251109_154334
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.01
+
+Hyperparameters:
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9762
+  - Best Validation Loss: 0.2915
+  - Found at Epoch: 45
+--------------------------------------
+
+--- Log Entry: 20251109_154933 ---
+Experiment Name: model_20251109_154933
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: False
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.01
+
+Hyperparameters:
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9741
+  - Best Validation Loss: 0.1649
+  - Found at Epoch: 38
+--------------------------------------
+
+--- Log Entry: 20251109_155747 ---
+Experiment Name: model_20251109_155747
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: False
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.04
+
+Hyperparameters:
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 20
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9696
+  - Best Validation Loss: 0.2466
+  - Found at Epoch: 41
+--------------------------------------
+
+--- Log Entry: 20251109_160905 ---
+Experiment Name: model_20251109_160905
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: False
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.02
+
+Hyperparameters:
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9624
+  - Best Validation Loss: 0.2144
+  - Found at Epoch: 39
+--------------------------------------
+
+--- Log Entry: 20251109_161151 ---
+Experiment Name: model_20251109_161151
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: False
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.02
+
+Hyperparameters:
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 160
+  - STRIDE: 160
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9624
+  - Best Validation Loss: 0.2668
+  - Found at Epoch: 121
+--------------------------------------
+
+--- Log Entry: 20251109_161853 ---
+Experiment Name: model_20251109_161853
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: False
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.02
+
+Hyperparameters:
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  - HIDDEN_LAYERS: 3
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9624
+  - Best Validation Loss: 0.2144
+  - Found at Epoch: 39
+--------------------------------------
+
+--- Log Entry: 20251109_162125 ---
+Experiment Name: model_20251109_162125
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: False
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.02
+
+Hyperparameters:
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  - HIDDEN_LAYERS: 4
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.1
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.0
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9627
+  - Best Validation Loss: 0.2493
+  - Found at Epoch: 86
+--------------------------------------
+
+--- Log Entry: 20251109_162416 ---
+Experiment Name: model_20251109_162416
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: False
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.02
+
+Hyperparameters:
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  - HIDDEN_LAYERS: 4
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9622
+  - Best Validation Loss: 0.2438
+  - Found at Epoch: 117
+--------------------------------------
+
+--- Log Entry: 20251109_162735 ---
+Experiment Name: model_20251109_162735
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: False
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.03
+
+Hyperparameters:
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  - HIDDEN_LAYERS: 4
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9649
+  - Best Validation Loss: 0.2677
+  - Found at Epoch: 36
+--------------------------------------
+
+--- Log Entry: 20251109_163556 ---
+Experiment Name: model_20251109_163556
+
+Fixed parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.03
+
+Hyperparameters:
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  - HIDDEN_LAYERS: 4
+  - HIDDEN_SIZE: 64
+  - RNN_TYPE: LSTM
+  - BIDIRECTIONAL: True
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV: 0.1
+  - USE_STATIC_FEATURES: True
+  - STATIC_HIDDEN_SIZE: 2
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9683
+  - Best Validation Loss: 0.0991
+  - Found at Epoch: 79
+--------------------------------------
+
