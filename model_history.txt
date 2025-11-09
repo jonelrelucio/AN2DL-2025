@@ -1187,3 +1187,579 @@ Best Model Results (from Early Stopping):
   - Found at Epoch: 79
 --------------------------------------
 
+--- Log Entry: 20251109_170608 ---
+Experiment Name: model_20251109_170608
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.03
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
+
+  --- Hybrid Architecture (3-Branch) ---
+  - Branch 1 (Joints RNN):
+      - RNN_TYPE: LSTM
+      - HIDDEN_LAYERS: 4
+      - HIDDEN_SIZE: 64
+      - BIDIRECTIONAL: True
+  - Branch 2 (Pain Survey Branch):
+      - PAIN_BRANCH_TYPE: LSTM
+      - PAIN_NUM_LAYERS: 1
+      - PAIN_HIDDEN_SIZE: 16
+      - PAIN_BRANCH_BIDIRECTIONAL: True
+  - Branch 3 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 2
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9655
+  - Best Validation Loss: 0.1349
+  - Found at Epoch: 75
+--------------------------------------
+
+--- Log Entry: 20251109_172510 ---
+Experiment Name: model_20251109_172510
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.0
+  - LABEL_SMOOTHING: 0.03
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
+
+  --- Hybrid Architecture (3-Branch) ---
+  - Branch 1 (Joints RNN):
+      - RNN_TYPE: LSTM
+      - HIDDEN_LAYERS: 4
+      - HIDDEN_SIZE: 64
+      - BIDIRECTIONAL: True
+  - Branch 2 (Pain Survey Branch):
+      - PAIN_BRANCH_TYPE: LSTM
+      - PAIN_NUM_LAYERS: 2
+      - PAIN_HIDDEN_SIZE: 8
+      - PAIN_BRANCH_BIDIRECTIONAL: True
+  - Branch 3 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 2
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9665
+  - Best Validation Loss: 0.1039
+  - Found at Epoch: 40
+--------------------------------------
+
+--- Log Entry: 20251109_175300 ---
+Experiment Name: model_20251109_175300
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.1
+  - LABEL_SMOOTHING: 0.03
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 100
+  - STRIDE: 10
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
+
+  --- Hybrid Architecture (3-Branch) ---
+  - Branch 1 (Joints RNN):
+      - RNN_TYPE: LSTM
+      - HIDDEN_LAYERS: 4
+      - HIDDEN_SIZE: 64
+      - BIDIRECTIONAL: True
+  - Branch 2 (Pain Survey Branch):
+      - PAIN_BRANCH_TYPE: GRU
+      - PAIN_NUM_LAYERS: 2
+      - PAIN_HIDDEN_SIZE: 8
+      - PAIN_BRANCH_BIDIRECTIONAL: False
+  - Branch 3 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 2
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9642
+  - Best Validation Loss: 0.1322
+  - Found at Epoch: 80
+--------------------------------------
+
+--- Log Entry: 20251109_181100 ---
+Experiment Name: model_20251109_181100
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.1
+  - LABEL_SMOOTHING: 0.03
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 100
+  - STRIDE: 10
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
+
+  --- Hybrid Architecture (3-Branch) ---
+  - Branch 1 (Joints RNN):
+      - RNN_TYPE: LSTM
+      - HIDDEN_LAYERS: 4
+      - HIDDEN_SIZE: 64
+      - BIDIRECTIONAL: True
+  - Branch 2 (Pain Survey Branch):
+      - PAIN_BRANCH_TYPE: GRU
+      - PAIN_NUM_LAYERS: 2
+      - PAIN_HIDDEN_SIZE: 16
+      - PAIN_BRANCH_BIDIRECTIONAL: False
+  - Branch 3 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 16
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9621
+  - Best Validation Loss: 0.1390
+  - Found at Epoch: 63
+--------------------------------------
+
+--- Log Entry: 20251109_183651 ---
+Experiment Name: model_20251109_183651
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.1
+  - LABEL_SMOOTHING: 0.03
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 100
+  - STRIDE: 10
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
+
+  --- Hybrid Architecture (3-Branch) ---
+  - Branch 1 (Joints RNN):
+      - RNN_TYPE: LSTM
+      - HIDDEN_LAYERS: 4
+      - HIDDEN_SIZE: 64
+      - BIDIRECTIONAL: True
+  - Branch 2 (Pain Survey Branch):
+      - PAIN_BRANCH_TYPE: GRU
+      - PAIN_NUM_LAYERS: 2
+      - PAIN_HIDDEN_SIZE: 16
+      - PAIN_BRANCH_BIDIRECTIONAL: False
+  - Branch 3 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 16
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9596
+  - Best Validation Loss: 0.1427
+  - Found at Epoch: 57
+--------------------------------------
+
+--- Log Entry: 20251109_184900 ---
+Experiment Name: model_20251109_184900
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.1
+  - LABEL_SMOOTHING: 0.03
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 100
+  - STRIDE: 10
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.1
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
+
+  --- Hybrid Architecture (3-Branch) ---
+  - Branch 1 (Joints RNN):
+      - RNN_TYPE: LSTM
+      - HIDDEN_LAYERS: 5
+      - HIDDEN_SIZE: 64
+      - BIDIRECTIONAL: True
+  - Branch 2 (Pain Survey Branch):
+      - PAIN_BRANCH_TYPE: GRU
+      - PAIN_NUM_LAYERS: 2
+      - PAIN_HIDDEN_SIZE: 16
+      - PAIN_BRANCH_BIDIRECTIONAL: False
+  - Branch 3 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 16
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9807
+  - Best Validation Loss: 0.0973
+  - Found at Epoch: 147
+--------------------------------------
+
+--- Log Entry: 20251109_200507 ---
+Experiment Name: model_20251109_200507
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.1
+  - LABEL_SMOOTHING: 0.03
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.001
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
+
+  --- Hybrid Architecture (3-Branch) ---
+  - Branch 1 (Joints RNN):
+      - RNN_TYPE: LSTM
+      - HIDDEN_LAYERS: 5
+      - HIDDEN_SIZE: 64
+      - BIDIRECTIONAL: True
+  - Branch 2 (Pain Survey Branch):
+      - PAIN_BRANCH_TYPE: GRU
+      - PAIN_NUM_LAYERS: 3
+      - PAIN_HIDDEN_SIZE: 16
+      - PAIN_BRANCH_BIDIRECTIONAL: False
+  - Branch 3 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 16
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9701
+  - Best Validation Loss: 0.1313
+  - Found at Epoch: 24
+--------------------------------------
+
+--- Log Entry: 20251109_202705 ---
+Experiment Name: model_20251109_202705
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 0.9
+  - LABEL_SMOOTHING: 0.03
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.001
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
+
+  --- Hybrid Architecture (3-Branch) ---
+  - Branch 1 (Joints RNN):
+      - RNN_TYPE: LSTM
+      - HIDDEN_LAYERS: 5
+      - HIDDEN_SIZE: 64
+      - BIDIRECTIONAL: True
+  - Branch 2 (Pain Survey Branch):
+      - PAIN_BRANCH_TYPE: GRU
+      - PAIN_NUM_LAYERS: 3
+      - PAIN_HIDDEN_SIZE: 16
+      - PAIN_BRANCH_BIDIRECTIONAL: False
+  - Branch 3 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 16
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9701
+  - Best Validation Loss: 0.1313
+  - Found at Epoch: 24
+--------------------------------------
+
+--- Log Entry: 20251109_203634 ---
+Experiment Name: model_20251109_203634
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 0.6
+  - LABEL_SMOOTHING: 0.05
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.001
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
+
+  --- Hybrid Architecture (3-Branch) ---
+  - Branch 1 (Joints RNN):
+      - RNN_TYPE: LSTM
+      - HIDDEN_LAYERS: 5
+      - HIDDEN_SIZE: 64
+      - BIDIRECTIONAL: True
+  - Branch 2 (Pain Survey Branch):
+      - PAIN_BRANCH_TYPE: GRU
+      - PAIN_NUM_LAYERS: 3
+      - PAIN_HIDDEN_SIZE: 16
+      - PAIN_BRANCH_BIDIRECTIONAL: False
+  - Branch 3 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 16
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9699
+  - Best Validation Loss: 0.1419
+  - Found at Epoch: 152
+--------------------------------------
+
+--- Log Entry: 20251109_205047 ---
+Experiment Name: model_20251109_205047
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: (1, 2)
+  - LABEL_SMOOTHING: 0.05
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.001
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
+
+  --- Hybrid Architecture (3-Branch) ---
+  - Branch 1 (Joints RNN):
+      - RNN_TYPE: LSTM
+      - HIDDEN_LAYERS: 2
+      - HIDDEN_SIZE: 128
+      - BIDIRECTIONAL: True
+  - Branch 2 (Pain Survey Branch):
+      - PAIN_BRANCH_TYPE: GRU
+      - PAIN_NUM_LAYERS: 1
+      - PAIN_HIDDEN_SIZE: 16
+      - PAIN_BRANCH_BIDIRECTIONAL: False
+  - Branch 3 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 16
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9772
+  - Best Validation Loss: 0.1364
+  - Found at Epoch: 31
+--------------------------------------
+
+--- Log Entry: 20251109_205047 ---
+Experiment Name: model_20251109_205047
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: (1, 2)
+  - LABEL_SMOOTHING: 0.05
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.3
+  - L2_LAMBDA (Weight Decay): 0.001
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
+
+  --- Hybrid Architecture (3-Branch) ---
+  - Branch 1 (Joints RNN):
+      - RNN_TYPE: LSTM
+      - HIDDEN_LAYERS: 2
+      - HIDDEN_SIZE: 128
+      - BIDIRECTIONAL: True
+  - Branch 2 (Pain Survey Branch):
+      - PAIN_BRANCH_TYPE: GRU
+      - PAIN_NUM_LAYERS: 1
+      - PAIN_HIDDEN_SIZE: 16
+      - PAIN_BRANCH_BIDIRECTIONAL: False
+  - Branch 3 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 16
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9772
+  - Best Validation Loss: 0.1364
+  - Found at Epoch: 31
+--------------------------------------
+
+--- Log Entry: 20251109_222859 ---
+Experiment Name: model_20251109_222859
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 100
+  - VALIDATION_SPLIT: 0.2
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 0.9
+  - LABEL_SMOOTHING: 0.05
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 32
+  - WINDOW_SIZE: 80
+  - STRIDE: 40
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.2
+  - L2_LAMBDA (Weight Decay): 0.001
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
+
+  --- Hybrid Architecture (3-Branch) ---
+  - Branch 1 (Joints RNN):
+      - RNN_TYPE: LSTM
+      - HIDDEN_LAYERS: 3
+      - HIDDEN_SIZE: 32
+      - BIDIRECTIONAL: True
+  - Branch 2 (Pain Survey Branch):
+      - PAIN_BRANCH_TYPE: GRU
+      - PAIN_NUM_LAYERS: 3
+      - PAIN_HIDDEN_SIZE: 8
+      - PAIN_BRANCH_BIDIRECTIONAL: False
+  - Branch 3 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 8
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+
+Best Model Results (from Early Stopping):
+  - Best Validation F1 Score: 0.9772
+  - Best Validation Loss: 0.1338
+  - Found at Epoch: 47
+--------------------------------------
+
