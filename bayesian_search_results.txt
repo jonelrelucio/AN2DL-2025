@@ -1,0 +1,26 @@
+
+
+--- Bayesian Search Results Log ---
+Timestamp: 2025-11-10 13:41:36
+Total Runtime: 2:02:41.562058
+Total Trials: 50
+Best Validation F1 Score: 0.9630
+Optimal Parameters:
+  learning_rate            : 0.001
+  window_size              : 120
+  stride                   : 20
+  weight_ce_intensity      : 2.0
+  label_smoothing_epsilon  : 0.0
+  hidden_layers            : 3
+  hidden_size              : 128
+  rnn_type                 : LSTM
+  bidirectional            : True
+  pain_branch_type         : GRU
+  pain_num_layers          : 2
+  pain_hidden_size         : 32
+  pain_branch_bidirectional: False
+  static_hidden_size       : 64
+  dropout_rate             : 0.5
+  l2_lambda                : 0.0001
+  noise_std_dev            : 0.0
+----------------------------------
