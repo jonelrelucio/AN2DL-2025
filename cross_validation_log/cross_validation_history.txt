@@ -1,0 +1,247 @@
+
+--- Log Entry: 2025-11-11 18:20:20 ---
+Experiment Name: direct_cv (K=5)
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 300
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.6
+  - LABEL_SMOOTHING: 0.0
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 64
+  - WINDOW_SIZE: 40
+  - STRIDE: 20
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.4
+  - L2_LAMBDA (Weight Decay): 0.2
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.2
+
+  --- Hybrid Architecture (2-Branch: DualClassifier) ---
+  - Branch 1 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 4
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+  - Branch 2 (Combined RNN):
+      - RNN_TYPE: LSTM
+      - RNN_HIDDEN_LAYERS: 2
+      - RNN_HIDDEN_SIZE: 8
+      - RNN_BIDIRECTIONAL: True
+      - PAIN_EMBEDDING_DIM: 16
+
+Cross-Validation Results (5 Folds):
+  - Mean Validation F1 Score: 0.9351 (Std Dev: 0.0194)
+  - Mean Validation Precision: 0.9366 (Std Dev: 0.0190)
+  - Mean Validation Recall: 0.9379 (Std Dev: 0.0188)
+
+  - Individual Fold F1 Scores:
+    - Fold 1: 0.9515
+    - Fold 2: 0.9265
+    - Fold 3: 0.9162
+    - Fold 4: 0.9168
+    - Fold 5: 0.9644
+  - Individual Fold Precision Scores:
+    - Fold 1: 0.9513
+    - Fold 2: 0.9295
+    - Fold 3: 0.9157
+    - Fold 4: 0.9206
+    - Fold 5: 0.9657
+  - Individual Fold Recall Scores:
+    - Fold 1: 0.9545
+    - Fold 2: 0.9297
+    - Fold 3: 0.9199
+    - Fold 4: 0.9199
+    - Fold 5: 0.9656
+--------------------------------------
+
+--- Log Entry: 2025-11-11 18:33:32 ---
+Experiment Name: direct_cv_velocity_acceleration (K=5)
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 300
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.6
+  - LABEL_SMOOTHING: 0.0
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 64
+  - WINDOW_SIZE: 40
+  - STRIDE: 20
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.4
+  - L2_LAMBDA (Weight Decay): 0.2
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.2
+
+  --- Hybrid Architecture (2-Branch: DualClassifier) ---
+  - Branch 1 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 4
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes']
+  - Branch 2 (Combined RNN):
+      - RNN_TYPE: LSTM
+      - RNN_HIDDEN_LAYERS: 2
+      - RNN_HIDDEN_SIZE: 8
+      - RNN_BIDIRECTIONAL: True
+      - PAIN_EMBEDDING_DIM: 16
+
+Cross-Validation Results (5 Folds):
+  - Mean Validation F1 Score: 0.9271 (Std Dev: 0.0127)
+  - Mean Validation Precision: 0.9272 (Std Dev: 0.0122)
+  - Mean Validation Recall: 0.9291 (Std Dev: 0.0118)
+
+  - Individual Fold F1 Scores:
+    - Fold 1: 0.9480
+    - Fold 2: 0.9228
+    - Fold 3: 0.9185
+    - Fold 4: 0.9121
+    - Fold 5: 0.9340
+  - Individual Fold Precision Scores:
+    - Fold 1: 0.9479
+    - Fold 2: 0.9223
+    - Fold 3: 0.9180
+    - Fold 4: 0.9145
+    - Fold 5: 0.9334
+  - Individual Fold Recall Scores:
+    - Fold 1: 0.9481
+    - Fold 2: 0.9253
+    - Fold 3: 0.9199
+    - Fold 4: 0.9156
+    - Fold 5: 0.9366
+--------------------------------------
+
+--- Log Entry: 2025-11-11 19:21:23 ---
+Experiment Name: direct_cv (K=5)
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 300
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.6
+  - LABEL_SMOOTHING: 0.0
+
+Hyperparameters:
+  - USE_HYBRID_MODEL: True
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 64
+  - WINDOW_SIZE: 40
+  - STRIDE: 20
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.4
+  - L2_LAMBDA (Weight Decay): 0.2
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.2
+
+  --- Hybrid Architecture (2-Branch: DualClassifier) ---
+  - Branch 1 (Static MLP):
+      - STATIC_HIDDEN_SIZE: 4
+      - STATIC_FEATURES: ['n_legs', 'n_hands', 'n_eyes', 'joint_00_fft_mean_pwr', 'joint_00_fft_std_pwr', 'joint_00_fft_peak_freq', 'joint_01_fft_mean_pwr', 'joint_01_fft_std_pwr', 'joint_01_fft_peak_freq', 'joint_02_fft_mean_pwr', 'joint_02_fft_std_pwr', 'joint_02_fft_peak_freq', 'joint_03_fft_mean_pwr', 'joint_03_fft_std_pwr', 'joint_03_fft_peak_freq', 'joint_04_fft_mean_pwr', 'joint_04_fft_std_pwr', 'joint_04_fft_peak_freq', 'joint_05_fft_mean_pwr', 'joint_05_fft_std_pwr', 'joint_05_fft_peak_freq', 'joint_06_fft_mean_pwr', 'joint_06_fft_std_pwr', 'joint_06_fft_peak_freq', 'joint_07_fft_mean_pwr', 'joint_07_fft_std_pwr', 'joint_07_fft_peak_freq', 'joint_08_fft_mean_pwr', 'joint_08_fft_std_pwr', 'joint_08_fft_peak_freq', 'joint_09_fft_mean_pwr', 'joint_09_fft_std_pwr', 'joint_09_fft_peak_freq', 'joint_10_fft_mean_pwr', 'joint_10_fft_std_pwr', 'joint_10_fft_peak_freq', 'joint_11_fft_mean_pwr', 'joint_11_fft_std_pwr', 'joint_11_fft_peak_freq', 'joint_12_fft_mean_pwr', 'joint_12_fft_std_pwr', 'joint_12_fft_peak_freq', 'joint_13_fft_mean_pwr', 'joint_13_fft_std_pwr', 'joint_13_fft_peak_freq', 'joint_14_fft_mean_pwr', 'joint_14_fft_std_pwr', 'joint_14_fft_peak_freq', 'joint_15_fft_mean_pwr', 'joint_15_fft_std_pwr', 'joint_15_fft_peak_freq', 'joint_16_fft_mean_pwr', 'joint_16_fft_std_pwr', 'joint_16_fft_peak_freq', 'joint_17_fft_mean_pwr', 'joint_17_fft_std_pwr', 'joint_17_fft_peak_freq', 'joint_18_fft_mean_pwr', 'joint_18_fft_std_pwr', 'joint_18_fft_peak_freq', 'joint_19_fft_mean_pwr', 'joint_19_fft_std_pwr', 'joint_19_fft_peak_freq', 'joint_20_fft_mean_pwr', 'joint_20_fft_std_pwr', 'joint_20_fft_peak_freq', 'joint_21_fft_mean_pwr', 'joint_21_fft_std_pwr', 'joint_21_fft_peak_freq', 'joint_22_fft_mean_pwr', 'joint_22_fft_std_pwr', 'joint_22_fft_peak_freq', 'joint_23_fft_mean_pwr', 'joint_23_fft_std_pwr', 'joint_23_fft_peak_freq', 'joint_24_fft_mean_pwr', 'joint_24_fft_std_pwr', 'joint_24_fft_peak_freq', 'joint_25_fft_mean_pwr', 'joint_25_fft_std_pwr', 'joint_25_fft_peak_freq', 'joint_26_fft_mean_pwr', 'joint_26_fft_std_pwr', 'joint_26_fft_peak_freq', 'joint_27_fft_mean_pwr', 'joint_27_fft_std_pwr', 'joint_27_fft_peak_freq', 'joint_28_fft_mean_pwr', 'joint_28_fft_std_pwr', 'joint_28_fft_peak_freq', 'joint_29_fft_mean_pwr', 'joint_29_fft_std_pwr', 'joint_29_fft_peak_freq']
+  - Branch 2 (Combined RNN):
+      - RNN_TYPE: LSTM
+      - RNN_HIDDEN_LAYERS: 2
+      - RNN_HIDDEN_SIZE: 8
+      - RNN_BIDIRECTIONAL: True
+      - PAIN_EMBEDDING_DIM: 16
+
+Cross-Validation Results (5 Folds):
+  - Mean Validation F1 Score: 0.9077 (Std Dev: 0.0287)
+  - Mean Validation Precision: 0.9114 (Std Dev: 0.0258)
+  - Mean Validation Recall: 0.9161 (Std Dev: 0.0243)
+
+  - Individual Fold F1 Scores:
+    - Fold 1: 0.9450
+    - Fold 2: 0.8843
+    - Fold 3: 0.8771
+    - Fold 4: 0.8926
+    - Fold 5: 0.9396
+  - Individual Fold Precision Scores:
+    - Fold 1: 0.9448
+    - Fold 2: 0.8941
+    - Fold 3: 0.8804
+    - Fold 4: 0.8983
+    - Fold 5: 0.9393
+  - Individual Fold Recall Scores:
+    - Fold 1: 0.9481
+    - Fold 2: 0.9004
+    - Fold 3: 0.8874
+    - Fold 4: 0.9026
+    - Fold 5: 0.9420
+--------------------------------------
+--- Log Entry: 2025-11-11 22:45:45 ---
+Experiment Name: direct_cv (K=5)
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 300
+  - PATIENCE: 50
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.6
+  - LABEL_SMOOTHING: 0.0
+
+Hyperparameters:
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 64
+  - WINDOW_SIZE: 40
+  - STRIDE: 20
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.4
+  - L2_LAMBDA (Weight Decay): 0.2
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.2
+
+  --- Hybrid Architecture (2-Branch: DualClassifier) ---
+  - Branch 1 (Static MLP):
+      - RNN_TYPE: LSTM
+      - RNN_HIDDEN_LAYERS: 3
+      - RNN_HIDDEN_SIZE: 4
+      - RNN_BIDIRECTIONAL: True
+  - Branch 2 (Combined RNN):
+      - PAIN_EMBEDDING_DIM: 3
+      - STATIC_HIDDEN_SIZE: 4
+      - STATIC_EMBEDDING_DIM 3
+
+Cross-Validation Results (5 Folds):
+  - Mean Validation F1 Score: 0.9105 (Std Dev: 0.0241)
+  - Mean Validation Precision: 0.9122 (Std Dev: 0.0233)
+  - Mean Validation Recall: 0.9170 (Std Dev: 0.0220)
+
+  - Individual Fold F1 Scores:
+    - Fold 1: 0.9280
+    - Fold 2: 0.9018
+    - Fold 3: 0.8870
+    - Fold 4: 0.8873
+    - Fold 5: 0.9483
+  - Individual Fold Precision Scores:
+    - Fold 1: 0.9264
+    - Fold 2: 0.9007
+    - Fold 3: 0.8860
+    - Fold 4: 0.8974
+    - Fold 5: 0.9506
+  - Individual Fold Recall Scores:
+    - Fold 1: 0.9329
+    - Fold 2: 0.9080
+    - Fold 3: 0.8939
+    - Fold 4: 0.8983
+    - Fold 5: 0.9517
+--------------------------------------
+
