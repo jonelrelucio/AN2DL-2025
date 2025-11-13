@@ -24,3 +24,23 @@ Optimal Parameters:
   l2_lambda                : 0.0001
   noise_std_dev            : 0.0
 ----------------------------------
+
+
+--- Bayesian Search Results Log ---
+Timestamp: 2025-11-13 11:43:37
+Total Runtime: 0:00:35.228193
+Total Trials: 2
+Best Validation F1 Score: 0.8160
+Optimal Parameters:
+  learning_rate            : 0.01
+  weight_ce_intensity      : 2.0
+  label_smoothing_epsilon  : 0.0
+  hidden_layers            : 1
+  hidden_size              : 64
+  bidirectional            : False
+  pain_embedding_dim       : 3
+  window_embedding_dim     : 8
+  dropout_rate             : 0.5
+  l2_lambda                : 0.01
+  noise_std_dev            : 0.0
+----------------------------------
