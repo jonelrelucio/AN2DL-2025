@@ -44,3 +44,138 @@ Optimal Parameters:
   l2_lambda                : 0.01
   noise_std_dev            : 0.0
 ----------------------------------
+
+
+--- Bayesian Search Results Log ---
+Timestamp: 2025-11-13 11:48:27
+Total Runtime: 0:00:31.065298
+Total Trials: 2
+Best Validation F1 Score: 0.8142
+Optimal Parameters:
+  learning_rate            : 0.01
+  weight_ce_intensity      : 2.0
+  label_smoothing_epsilon  : 0.0
+  hidden_layers            : 1
+  hidden_size              : 128
+  bidirectional            : False
+  pain_embedding_dim       : 5
+  window_embedding_dim     : 4
+  dropout_rate             : 0.5
+  l2_lambda                : 0.01
+  noise_std_dev            : 0.0
+----------------------------------
+
+
+--- Bayesian Search Results Log ---
+Timestamp: 2025-11-13 11:54:53
+Total Runtime: 0:00:30.627812
+Total Trials: 2
+Best Validation F1 Score: 0.6588
+Optimal Parameters:
+  learning_rate            : 1e-05
+  weight_ce_intensity      : 0.0
+  label_smoothing_epsilon  : 0.0
+  hidden_layers            : 1
+  hidden_size              : 128
+  bidirectional            : False
+  pain_embedding_dim       : 2
+  window_embedding_dim     : 16
+  dropout_rate             : 0.5
+  l2_lambda                : 1e-05
+  noise_std_dev            : 0.2
+----------------------------------
+
+
+--- Bayesian Search Results Log ---
+Timestamp: 2025-11-13 11:58:57
+Total Runtime: 0:00:36.013853
+Total Trials: 2
+Best Validation F1 Score: 0.8266
+Optimal Parameters:
+  learning_rate            : 0.01
+  weight_ce_intensity      : 0.0
+  label_smoothing_epsilon  : 0.0
+  hidden_layers            : 1
+  hidden_size              : 128
+  pain_embedding_dim       : 2
+  window_embedding_dim     : 16
+  dropout_rate             : 0.0
+  l2_lambda                : 0.01
+  noise_std_dev            : 0.2
+----------------------------------
+
+
+--- Bayesian Search Results Log ---
+Timestamp: 2025-11-13 12:01:20
+Total Runtime: 0:00:37.611965
+Total Trials: 2
+Best Validation F1 Score: 0.6088
+Optimal Parameters:
+  learning_rate            : 1e-05
+  weight_ce_intensity      : 0.0
+  label_smoothing_epsilon  : 0.0
+  hidden_layers            : 3
+  hidden_size              : 128
+  pain_embedding_dim       : 2
+  window_embedding_dim     : 4
+  dropout_rate             : 0.0
+  l2_lambda                : 0.01
+  noise_std_dev            : 0.0
+----------------------------------
+
+
+--- Bayesian Search Results Log ---
+Timestamp: 2025-11-13 12:52:37
+Total Runtime: 0:00:04.838379
+Total Trials: 50
+Best Validation F1 Score: -0.0000
+Optimal Parameters:
+  learning_rate            : 0.001
+  weight_ce_intensity      : 1.0
+  label_smoothing_epsilon  : 0.0
+  hidden_layers            : 2
+  hidden_size              : 32
+  pain_embedding_dim       : 2
+  window_embedding_dim     : 8
+  dropout_rate             : 0.5
+  l2_lambda                : 0.001
+  noise_std_dev            : 0.0
+----------------------------------
+
+
+--- Bayesian Search Results Log ---
+Timestamp: 2025-11-13 12:54:13
+Total Runtime: 0:00:04.561027
+Total Trials: 50
+Best Validation F1 Score: -0.0000
+Optimal Parameters:
+  learning_rate            : 0.001
+  weight_ce_intensity      : 2.0
+  label_smoothing_epsilon  : 0.1
+  hidden_layers            : 1
+  hidden_size              : 128
+  pain_embedding_dim       : 2
+  window_embedding_dim     : 4
+  dropout_rate             : 0.5
+  l2_lambda                : 0.01
+  noise_std_dev            : 0.0
+----------------------------------
+
+
+--- Bayesian Search Results Log ---
+Timestamp: 2025-11-13 12:57:49
+Total Runtime: 0:00:28.808052
+Total Trials: 2
+Best Validation F1 Score: 0.8187
+Optimal Parameters:
+  learning_rate            : 0.001
+  weight_ce_intensity      : 1.0
+  label_smoothing_epsilon  : 0.0
+  hidden_layers            : 1
+  hidden_size              : 128
+  pain_embedding_dim       : 2
+  window_embedding_dim     : 4
+  dropout_rate             : 0.5
+  l2_lambda                : 0.01
+  noise_std_dev            : 0.1
+----------------------------------
