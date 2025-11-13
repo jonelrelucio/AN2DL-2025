@@ -781,3 +781,58 @@ Cross-Validation Results (5 Folds):
     - Fold 5: 0.9514
 --------------------------------------
 
+--- Log Entry: 2025-11-13 01:04:56 ---
+Experiment Name: direct_cv (K=5)
+
+Fixed Parameters:
+  - SEED_FLAG: True
+  - SEED: 100
+  - EPOCHS: 500
+  - PATIENCE: 60
+  - CROSS_ENTROPY_FLAG: True
+  - CROSS_ENTROPY_W_INTENSITY: 1.6
+  - LABEL_SMOOTHING: 0.0
+
+Hyperparameters:
+
+  --- General Optimization ---
+  - LEARNING_RATE: 0.001
+  - BATCH_SIZE: 64
+  - WINDOW_SIZE: 20
+  - STRIDE: 10
+  --- General Regularization ---
+  - DROPOUT_RATE: 0.4
+  - L2_LAMBDA (Weight Decay): 0.2
+  - L1_LAMBDA: 0.0
+  - NOISE_STD_DEV (on Joints): 0.0
+
+  --- Pain Classifier Architecture ---
+      - RNN_TYPE: LSTM
+      - RNN_HIDDEN_LAYERS: 2
+      - RNN_HIDDEN_SIZE: 16
+      - RNN_BIDIRECTIONAL: False
+Cross-Validation Results (5 Folds):
+  - Mean Validation F1 Score: 0.9317 (Std Dev: 0.0211)
+  - Mean Validation Precision: 0.9336 (Std Dev: 0.0210)
+  - Mean Validation Recall: 0.9349 (Std Dev: 0.0202)
+
+  - Individual Fold F1 Scores:
+    - Fold 1: 0.9557
+    - Fold 2: 0.9053
+    - Fold 3: 0.9091
+    - Fold 4: 0.9364
+    - Fold 5: 0.9521
+  - Individual Fold Precision Scores:
+    - Fold 1: 0.9554
+    - Fold 2: 0.9100
+    - Fold 3: 0.9085
+    - Fold 4: 0.9374
+    - Fold 5: 0.9566
+  - Individual Fold Recall Scores:
+    - Fold 1: 0.9571
+    - Fold 2: 0.9126
+    - Fold 3: 0.9106
+    - Fold 4: 0.9384
+    - Fold 5: 0.9559
+--------------------------------------
+
