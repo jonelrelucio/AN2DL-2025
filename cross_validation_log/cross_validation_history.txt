@@ -1,70 +1,11 @@
---- Log Entry: 2025-11-13 01:35:25 ---
+--- Log Entry: 2025-11-13 18:24:45 ---
 Experiment Name: direct_cv (K=5)
 
 Fixed Parameters:
   - SEED_FLAG: True
   - SEED: 100
-  - EPOCHS: 500
-  - PATIENCE: 60
-  - CROSS_ENTROPY_FLAG: True
-  - CROSS_ENTROPY_W_INTENSITY: 1.6
-  - LABEL_SMOOTHING: 0.0
-  - USED JOINTS: []
-  - GRADIENT CLIP NORM: 0.1
-
-Hyperparameters:
-
-  --- General Optimization ---
-  - LEARNING_RATE: 0.001
-  - BATCH_SIZE: 64
-  - WINDOW_SIZE: 20
-  - STRIDE: 10
-  --- General Regularization ---
-  - DROPOUT_RATE: 0.4
-  - L2_LAMBDA (Weight Decay): 0.2
-  - L1_LAMBDA: 0.0
-  - NOISE_STD_DEV (on Joints): 0.0
-
-  --- Pain Classifier Architecture ---
-      - RNN_TYPE: LSTM
-      - RNN_HIDDEN_LAYERS: 2
-      - RNN_HIDDEN_SIZE: 16
-      - RNN_BIDIRECTIONAL: False
-      - WINDOW_INDEX_EMBEDDING_DIM: 2
-  Cross-Validation Results (5 Folds):
-  - Best Epoch: 0
-  - Mean Validation F1 Score: 0.9168 (Std Dev: 0.0095)
-  - Mean Validation Precision: 0.9189 (Std Dev: 0.0076)
-  - Mean Validation Recall: 0.9195 (Std Dev: 0.0075)
-
-  - Individual Fold F1 Scores:
-    - Fold 1: 0.9139
-    - Fold 2: 0.9216
-    - Fold 3: 0.9274
-    - Fold 4: 0.8998
-    - Fold 5: 0.9214
-  - Individual Fold Precision Scores:
-    - Fold 1: 0.9172
-    - Fold 2: 0.9216
-    - Fold 3: 0.9271
-    - Fold 4: 0.9050
-    - Fold 5: 0.9235
-  - Individual Fold Recall Scores:
-    - Fold 1: 0.9158
-    - Fold 2: 0.9242
-    - Fold 3: 0.9298
-    - Fold 4: 0.9076
-    - Fold 5: 0.9202
---------------------------------------
-
---- Log Entry: 2025-11-13 03:07:44 ---
-Experiment Name: direct_cv (K=5)
-
-Fixed Parameters:
-  - SEED_FLAG: True
-  - SEED: 100
-  - EPOCHS: 500
-  - PATIENCE: 60
+  - EPOCHS: 60
+  - PATIENCE: 500
   - CROSS_ENTROPY_FLAG: True
   - CROSS_ENTROPY_W_INTENSITY: 1.0
   - LABEL_SMOOTHING: 0.1
@@ -75,14 +16,14 @@ Hyperparameters:
 
   --- General Optimization ---
   - LEARNING_RATE: 0.001
-  - BATCH_SIZE: 64
+  - BATCH_SIZE: 32
   - WINDOW_SIZE: 20
   - STRIDE: 10
   --- General Regularization ---
-  - DROPOUT_RATE: 0.5
-  - L2_LAMBDA (Weight Decay): 0.3
+  - DROPOUT_RATE: 0.4
+  - L2_LAMBDA (Weight Decay): 0.01
   - L1_LAMBDA: 0.0
-  - NOISE_STD_DEV (on Joints): 0.0
+  - NOISE_STD_DEV (on Joints): 0.1
 
   --- Pain Classifier Architecture ---
       - RNN_TYPE: LSTM
@@ -92,145 +33,27 @@ Hyperparameters:
       - WINDOW_INDEX_EMBEDDING_DIM: 8
   Cross-Validation Results (5 Folds):
   - Best Epoch: 0
-  - Mean Validation F1 Score: 0.9185 (Std Dev: 0.0218)
-  - Mean Validation Precision: 0.9223 (Std Dev: 0.0183)
-  - Mean Validation Recall: 0.9237 (Std Dev: 0.0183)
+  - Mean Validation F1 Score: 0.9046 (Std Dev: 0.0219)
+  - Mean Validation Precision: 0.9096 (Std Dev: 0.0167)
+  - Mean Validation Recall: 0.9136 (Std Dev: 0.0165)
 
   - Individual Fold F1 Scores:
-    - Fold 1: 0.9090
-    - Fold 2: 0.9108
-    - Fold 3: 0.9551
-    - Fold 4: 0.8899
-    - Fold 5: 0.9275
+    - Fold 1: 0.9163
+    - Fold 2: 0.8953
+    - Fold 3: 0.9376
+    - Fold 4: 0.8719
+    - Fold 5: 0.9019
   - Individual Fold Precision Scores:
-    - Fold 1: 0.9147
-    - Fold 2: 0.9113
-    - Fold 3: 0.9556
-    - Fold 4: 0.9031
-    - Fold 5: 0.9269
+    - Fold 1: 0.9157
+    - Fold 2: 0.9019
+    - Fold 3: 0.9376
+    - Fold 4: 0.8872
+    - Fold 5: 0.9056
   - Individual Fold Recall Scores:
-    - Fold 1: 0.9148
-    - Fold 2: 0.9121
-    - Fold 3: 0.9561
-    - Fold 4: 0.9045
-    - Fold 5: 0.9308
---------------------------------------
-
---- Log Entry: 2025-11-13 03:27:47 ---
-Experiment Name: direct_cv (K=5)
-
-Fixed Parameters:
-  - SEED_FLAG: True
-  - SEED: 100
-  - EPOCHS: 500
-  - PATIENCE: 60
-  - CROSS_ENTROPY_FLAG: True
-  - CROSS_ENTROPY_W_INTENSITY: 1.0
-  - LABEL_SMOOTHING: 0.1
-  - USED JOINTS: []
-  - GRADIENT CLIP NORM: 0.1
-
-Hyperparameters:
-
-  --- General Optimization ---
-  - LEARNING_RATE: 0.001
-  - BATCH_SIZE: 64
-  - WINDOW_SIZE: 80
-  - STRIDE: 20
-  --- General Regularization ---
-  - DROPOUT_RATE: 0.5
-  - L2_LAMBDA (Weight Decay): 0.3
-  - L1_LAMBDA: 0.0
-  - NOISE_STD_DEV (on Joints): 0.0
-
-  --- Pain Classifier Architecture ---
-      - RNN_TYPE: LSTM
-      - RNN_HIDDEN_LAYERS: 1
-      - RNN_HIDDEN_SIZE: 256
-      - RNN_BIDIRECTIONAL: False
-      - WINDOW_INDEX_EMBEDDING_DIM: 8
-  Cross-Validation Results (5 Folds):
-  - Best Epoch: 0
-  - Mean Validation F1 Score: 0.9245 (Std Dev: 0.0229)
-  - Mean Validation Precision: 0.9311 (Std Dev: 0.0178)
-  - Mean Validation Recall: 0.9304 (Std Dev: 0.0184)
-
-  - Individual Fold F1 Scores:
-    - Fold 1: 0.8964
-    - Fold 2: 0.9466
-    - Fold 3: 0.9544
-    - Fold 4: 0.9036
-    - Fold 5: 0.9215
-  - Individual Fold Precision Scores:
-    - Fold 1: 0.9212
-    - Fold 2: 0.9469
-    - Fold 3: 0.9544
-    - Fold 4: 0.9050
-    - Fold 5: 0.9277
-  - Individual Fold Recall Scores:
-    - Fold 1: 0.9128
-    - Fold 2: 0.9485
-    - Fold 3: 0.9545
-    - Fold 4: 0.9091
-    - Fold 5: 0.9273
---------------------------------------
-
---- Log Entry: 2025-11-13 10:38:50 ---
-Experiment Name: direct_cv (K=5)
-
-Fixed Parameters:
-  - SEED_FLAG: True
-  - SEED: 500
-  - EPOCHS: 500
-  - PATIENCE: 60
-  - CROSS_ENTROPY_FLAG: True
-  - CROSS_ENTROPY_W_INTENSITY: 2.0
-  - LABEL_SMOOTHING: 0.0
-
-Hyperparameters:
-
-  --- General Optimization ---
-  - LEARNING_RATE: 0.001
-  - BATCH_SIZE: 64
-  - WINDOW_SIZE: 40
-  - STRIDE: 20
-  --- General Regularization ---
-  - DROPOUT_RATE: 0.2
-  - L2_LAMBDA (Weight Decay): 0.1
-  - L1_LAMBDA: 0.0
-  - NOISE_STD_DEV (on Joints): 0.0
-
-  --- Hybrid Architecture (2-Branch: DualClassifier) ---
-  - Branch 1 (Static MLP):
-      - RNN_TYPE: LSTM
-      - RNN_HIDDEN_LAYERS: 2
-      - RNN_HIDDEN_SIZE: 32
-      - RNN_BIDIRECTIONAL: False
-  - Branch 2 (Combined RNN):
-      - PAIN_EMBEDDING_DIM: 1
-
-Cross-Validation Results (5 Folds):
-  - Mean Validation F1 Score: 0.9372 (Std Dev: 0.0084)
-  - Mean Validation Precision: 0.9376 (Std Dev: 0.0086)
-  - Mean Validation Recall: 0.9391 (Std Dev: 0.0087)
-
-  - Individual Fold F1 Scores:
-    - Fold 1: 0.9366
-    - Fold 2: 0.9312
-    - Fold 3: 0.9482
-    - Fold 4: 0.9447
-    - Fold 5: 0.9254
-  - Individual Fold Precision Scores:
-    - Fold 1: 0.9360
-    - Fold 2: 0.9322
-    - Fold 3: 0.9485
-    - Fold 4: 0.9459
-    - Fold 5: 0.9255
-  - Individual Fold Recall Scores:
-    - Fold 1: 0.9372
-    - Fold 2: 0.9318
-    - Fold 3: 0.9502
-    - Fold 4: 0.9481
-    - Fold 5: 0.9280
+    - Fold 1: 0.9203
+    - Fold 2: 0.9040
+    - Fold 3: 0.9399
+    - Fold 4: 0.8904
+    - Fold 5: 0.9131
 --------------------------------------
 
