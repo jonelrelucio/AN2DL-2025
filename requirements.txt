@@ -7,3 +7,7 @@ scikit-learn
 torchviz
 optuna
 optuna-dashboard
+statsmodels
+torchaudio
+torchsummary
+tensorboard
