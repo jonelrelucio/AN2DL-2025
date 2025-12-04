@@ -16,6 +16,7 @@ OPTIMIZER = 'AdamW'
 # --- Data Settings ---
 TRAIN_DATA_PATH = 'train_data'
 TEST_DATA_PATH = 'test_data'
-TRAIN_CACHE_PATH = 'cache/train_images_cache.npy'
+TRAIN_IMAGES_CACHE_PATH = 'cache/train_images_cache.npy'
+TRAIN_MASKS_CACHE_PATH = 'cache/train_masks_cache.npy'
 TEST_CACHE_PATH = 'cache/test_images_cache.npy'
 IMAGE_SIZE = 224
