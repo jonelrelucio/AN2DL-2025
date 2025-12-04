@@ -8,7 +8,6 @@ torchviz
 optuna
 optuna-dashboard
 statsmodels
-torchaudio
 torchsummary
 tensorboard
 torchvision
