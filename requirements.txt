@@ -11,3 +11,6 @@ statsmodels
 torchaudio
 torchsummary
 tensorboard
+torchvision
+torchview
+opencv-python
