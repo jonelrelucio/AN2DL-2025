@@ -6,3 +6,4 @@ challenge1/pirate_pain_test.csv
 challenge2/test_data/*.png
 challenge2/train_data/*.png
 challenge2/__pycache__
+challenge2/cache
