@@ -48,3 +48,34 @@ def visualize_image_components(train_images, train_masks, train_labels, num_samp
     plt.suptitle(f"Random Sample of {num_samples} Image/Mask Pairs with Grayscale RGB Channels", y=1.02)
     plt.tight_layout()
     plt.show()
+
+
+def plot_training_history(history, title="Training History"):
+
+    fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(18, 5))
+    
+    # --- Plot 1: Loss ---
+    ax1.plot(history['train_loss'], label='Training Loss', alpha=0.5, color='#ff7f0e', linestyle='--')
+    ax1.plot(history['val_loss'], label='Validation Loss', alpha=1.0, color='#ff7f0e')
+    ax1.set_xlabel('Epochs')
+    ax1.set_ylabel('Loss')
+    ax1.set_title('Categorical Crossentropy')
+    ax1.legend()
+    ax1.grid(alpha=0.3)
+
+    # --- Plot 2: F1 Score ---
+    # Using a different color (e.g., Blue) for the metric to visually separate it from loss
+    ax2.plot(history['train_f1'], label='Training F1', alpha=0.5, color='#1f77b4', linestyle='--')
+    ax2.plot(history['val_f1'], label='Validation F1', alpha=1.0, color='#1f77b4')
+    ax2.set_xlabel('Epochs')
+    ax2.set_ylabel('Score')
+    ax2.set_title('F1 Score')
+    ax2.legend()
+    ax2.grid(alpha=0.3)
+
+    # Final Layout Adjustments
+    fig.suptitle(title, fontsize=14)
+    plt.tight_layout()
+    plt.subplots_adjust(top=0.9) # Make space for suptitle
+    plt.show()
+

@@ -7,3 +7,4 @@ challenge2/test_data/*.png
 challenge2/train_data/*.png
 challenge2/__pycache__
 challenge2/cache
+challenge2/models/
