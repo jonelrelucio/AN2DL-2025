@@ -1,51 +1,48 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def visualize_image_components(train_images, train_masks, train_labels, num_samples=10):
+def visualize_image_components(raw_image, raw_mask, train_labels, filenames=None, num_samples=6):
+    
+    # Safety check: ensure we don't sample more than available
+    n_samples = min(num_samples, len(raw_image))
+    
+    # 1. Pick random indices
+    random_indices = np.random.choice(len(raw_image), size=n_samples, replace=False)
 
-    # Select random indices for the samples
-    random_indices = np.random.choice(len(train_images), size=num_samples, replace=False)
-
-    # 5 rows: Image, R, G, B, Mask
-    fig, axes = plt.subplots(5, num_samples, figsize=(20, 10))
+    # 2. Setup Plot
+    fig, axes = plt.subplots(2, n_samples, figsize=(18, 6)) 
 
     for i, idx in enumerate(random_indices):
-        # Clip image and mask data once for plotting
-        img = np.clip(train_images[idx], 0, 1)
-        mask = np.clip(train_masks[idx], 0, 1)
-        label = train_labels[idx] # Get the label
         
-        # Row 0: Image (RGB)
-        ax_img = axes[0, i]
-        ax_img.imshow(img) 
-        ax_img.set_title(f"Image {idx}\n({label})", fontsize=8) 
-        ax_img.axis('off')
+        # Grab data at this index
+        img = np.clip(raw_image[idx], 0, 1) 
+        mask = np.clip(raw_mask[idx], 0, 1)        
+        label = train_labels[idx]
+        
+        # --- KEY FIX: Resolve the Name ---
+        # If a filename list is provided, lookup the name at this index.
+        # Otherwise, fall back to the numeric index.
+        if filenames is not None:
+            image_id = filenames[idx] 
+        else:
+            image_id = f"Index {idx}"
 
-        # Row 1: Red Channel (Grayscale representation)
-        ax_r = axes[1, i]
-        ax_r.imshow(img[..., 0], cmap='gray')
-        ax_r.set_title("R Channel", fontsize=8)
-        ax_r.axis('off')
+        # Calculate masked image for display
+        masked_img = img * mask 
+        
+        # --- Row 0: Original Image ---
+        ax_orig = axes[0, i] if n_samples > 1 else axes[0]
+        ax_orig.imshow(img) 
+        ax_orig.set_title(f"{image_id}\nLabel: {label}", fontsize=9) 
+        ax_orig.axis('off')
+        
+        # --- Row 1: Masked Input ---
+        ax_masked = axes[1, i] if n_samples > 1 else axes[1]
+        ax_masked.imshow(masked_img)
+        ax_masked.set_title("Masked Input", fontsize=9)
+        ax_masked.axis('off')
 
-        # Row 2: Green Channel (Grayscale representation)
-        ax_g = axes[2, i]
-        ax_g.imshow(img[..., 1], cmap='gray')
-        ax_g.set_title("G Channel", fontsize=8)
-        ax_g.axis('off')
-
-        # Row 3: Blue Channel (Grayscale representation)
-        ax_b = axes[3, i]
-        ax_b.imshow(img[..., 2], cmap='gray')
-        ax_b.set_title("B Channel", fontsize=8)
-        ax_b.axis('off')
-
-        # Row 4: Corresponding Mask
-        ax_mask = axes[4, i]
-        ax_mask.imshow(mask)
-        ax_mask.set_title("Mask", fontsize=8)
-        ax_mask.axis('off')
-
-    plt.suptitle(f"Random Sample of {num_samples} Image/Mask Pairs with Grayscale RGB Channels", y=1.02)
+    plt.suptitle(f"Visualizing {n_samples} Samples", y=1.02, fontsize=14)
     plt.tight_layout()
     plt.show()
 

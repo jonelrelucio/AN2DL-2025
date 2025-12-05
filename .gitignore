@@ -8,3 +8,9 @@ challenge2/train_data/*.png
 challenge2/__pycache__
 challenge2/cache
 challenge2/models/
+challenge2/clean_train_data/
+
+compute_delete.py
+img_to_txt.py
+pairs.csv
+plot.py
