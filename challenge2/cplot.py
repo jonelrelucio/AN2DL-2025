@@ -20,8 +20,6 @@ def visualize_image_components(raw_image, raw_mask, train_labels, filenames=None
         label = train_labels[idx]
         
         # --- KEY FIX: Resolve the Name ---
-        # If a filename list is provided, lookup the name at this index.
-        # Otherwise, fall back to the numeric index.
         if filenames is not None:
             image_id = filenames[idx] 
         else:
