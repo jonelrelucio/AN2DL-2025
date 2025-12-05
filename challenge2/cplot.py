@@ -3,47 +3,57 @@ import matplotlib.pyplot as plt
 
 def visualize_image_components(raw_image, raw_mask, train_labels, filenames=None, num_samples=6):
     
-    # Safety check: ensure we don't sample more than available
+    # Safety check
     n_samples = min(num_samples, len(raw_image))
     
-    # 1. Pick random indices
+    # 1. Pick random indices from the FILTERED list
     random_indices = np.random.choice(len(raw_image), size=n_samples, replace=False)
 
-    # 2. Setup Plot
-    fig, axes = plt.subplots(2, n_samples, figsize=(18, 6)) 
+    fig, axes = plt.subplots(2, n_samples, figsize=(18, 7)) 
 
     for i, idx in enumerate(random_indices):
         
-        # Grab data at this index
-        img = np.clip(raw_image[idx], 0, 1) 
-        mask = np.clip(raw_mask[idx], 0, 1)        
+        # Grab data
+        img = raw_image[idx]
+        mask = raw_mask[idx]
         label = train_labels[idx]
         
-        # --- KEY FIX: Resolve the Name ---
+        # --- Auto-convert for Plotting ---
+        # If data is 0-255 (Integers), convert to 0.0-1.0 (Floats)
+        if img.max() > 1:
+            img = img.astype(np.float32) / 255.0
+        if mask.max() > 1:
+            mask = mask.astype(np.float32) / 255.0
+            
+        img = np.clip(img, 0, 1) 
+        mask = np.clip(mask, 0, 1)        
+        
+        # --- Resolve Name ---
         if filenames is not None:
-            image_id = filenames[idx] 
+            fname = filenames[idx]
         else:
-            image_id = f"Index {idx}"
+            fname = "Unknown"
+            
+        # Title shows Internal Index AND Real Filename to avoid confusion
+        title_text = f"{fname}\nLabel: {label}"
 
-        # Calculate masked image for display
+        # Masked Image
         masked_img = img * mask 
         
-        # --- Row 0: Original Image ---
+        # Plotting
         ax_orig = axes[0, i] if n_samples > 1 else axes[0]
         ax_orig.imshow(img) 
-        ax_orig.set_title(f"{image_id}\nLabel: {label}", fontsize=9) 
+        ax_orig.set_title(title_text, fontsize=9) 
         ax_orig.axis('off')
         
-        # --- Row 1: Masked Input ---
         ax_masked = axes[1, i] if n_samples > 1 else axes[1]
         ax_masked.imshow(masked_img)
-        ax_masked.set_title("Masked Input", fontsize=9)
+        ax_masked.set_title("Masked & Cropped", fontsize=9)
         ax_masked.axis('off')
 
-    plt.suptitle(f"Visualizing {n_samples} Samples", y=1.02, fontsize=14)
+    plt.suptitle(f"Visualizing {n_samples} Random Samples", y=1.02, fontsize=14)
     plt.tight_layout()
     plt.show()
-
 
 def plot_training_history(history, title="Training History"):
 
@@ -73,4 +83,6 @@ def plot_training_history(history, title="Training History"):
     plt.tight_layout()
     plt.subplots_adjust(top=0.9) # Make space for suptitle
     plt.show()
+
+
 
