@@ -13,6 +13,9 @@ MASK_OVERLAP_THRESH = 0.70  # Strict: Patch must overlap the mask by at least 70
 TISSUE_FRACTION_THRESH = 0.70 
 VARIANCE_THRESH = 5.0
 
+# Overlay settings
+OVERLAY_ALPHA = 0.4         # Opacity of the green mask layer (0.0 - 1.0)
+
 # --- PARAMETER ---
 # How many distinct "highest distribution" areas to find in Fallback
 NUM_PATCHES = 4 
@@ -25,7 +28,7 @@ TEST_PATCH_CSV = "challenge2/test_patches.csv"
 os.makedirs(TEST_PATCHES_DIR, exist_ok=True)
 
 # -----------------------------------------------------------------------------
-# 1. Helpers (Same as Training)
+# 1. Helpers
 # -----------------------------------------------------------------------------
 def patch_has_tissue(patch_rgb, frac_color_thresh=0.30, var_thresh=20.0):
     patch_hsv = cv2.cvtColor(patch_rgb, cv2.COLOR_RGB2HSV)
@@ -42,25 +45,65 @@ def patch_overlaps_mask(patch_mask, thresh=0.5):
     binary = (patch_mask > 0).astype(float)
     return binary.mean() >= thresh
 
-def save_patch_test(img_id, y, x, img_rgb, records_list):
+def create_green_overlay(patch_bgr, patch_mask_gray, alpha=0.4):
     """
-    Saves RGB patch only (masks usually aren't saved for test, but can be if needed).
+    Creates an image with a semi-transparent green overlay based on the mask.
     """
-    # 1. Crop patch
+    mixed_img = patch_bgr.copy()
+    mask_indices = patch_mask_gray > 0
+
+    # B channel: Blend original B with 0
+    mixed_img[mask_indices, 0] = (patch_bgr[mask_indices, 0] * (1 - alpha)).astype(np.uint8)
+    # G channel: Blend original G with 255
+    mixed_img[mask_indices, 1] = (patch_bgr[mask_indices, 1] * (1 - alpha) + 255 * alpha).astype(np.uint8)
+    # R channel: Blend original R with 0
+    mixed_img[mask_indices, 2] = (patch_bgr[mask_indices, 2] * (1 - alpha)).astype(np.uint8)
+    
+    return mixed_img
+
+def save_patch_test(img_id, y, x, img_rgb, mask_gray, records_list):
+    """
+    Saves:
+    1. Raw RGB patch
+    2. Grayscale Mask patch
+    3. Mixed Green Overlay patch
+    4. Masked Image (Blackout background) -> Key for consistency with training
+    """
+    # 1. Crop patches
     patch_rgb = img_rgb[y:y+INPUT_SIZE, x:x+INPUT_SIZE]
+    patch_mask = mask_gray[y:y+INPUT_SIZE, x:x+INPUT_SIZE]
     
     # Convert RGB patch to BGR for OpenCV saving
     patch_bgr = cv2.cvtColor(patch_rgb, cv2.COLOR_RGB2BGR)
 
-    # 2. Define Filename
-    filename_img = f"img_{img_id}_y{y}_x{x}.png"
-    path_img = os.path.join(TEST_PATCHES_DIR, filename_img)
+    # 2. Create Visualization (Green Overlay)
+    patch_mixed = create_green_overlay(patch_bgr, patch_mask, alpha=OVERLAY_ALPHA)
+
+    # 3. Create BLACKOUT Image (Mask * Image)
+    #  
+    # cv2.bitwise_and keeps the pixel if mask > 0, else makes it black (0,0,0)
+    patch_blackout = cv2.bitwise_and(patch_bgr, patch_bgr, mask=patch_mask)
+
+    # 4. Define Filenames
+    filename_img      = f"img_{img_id}_y{y}_x{x}.png"
+    filename_mask     = f"mask_{img_id}_y{y}_x{x}.png"
+    filename_mixed    = f"mixed_{img_id}_y{y}_x{x}.png"
+    filename_blackout = f"masked_img_{img_id}_y{y}_x{x}.png"
     
-    # 3. Save File
+    # 5. Define Paths
+    path_img      = os.path.join(TEST_PATCHES_DIR, filename_img)
+    path_mask     = os.path.join(TEST_PATCHES_DIR, filename_mask)
+    path_mixed    = os.path.join(TEST_PATCHES_DIR, filename_mixed)
+    path_blackout = os.path.join(TEST_PATCHES_DIR, filename_blackout)
+    
+    # 6. Save Files
     cv2.imwrite(path_img, patch_bgr)
+    cv2.imwrite(path_mask, patch_mask)
+    cv2.imwrite(path_mixed, patch_mixed)
+    cv2.imwrite(path_blackout, patch_blackout)
     
-    # 4. Record
-    records_list.append((filename_img, img_id))
+    # 7. Record (Storing the blackout image name to match training logic)
+    records_list.append((filename_blackout, img_id))
 
 # -----------------------------------------------------------------------------
 # 2. Main Loop
@@ -78,11 +121,11 @@ for img_id in test_ids:
     img_path = os.path.join(TEST_FOLDER, f"img_{img_id}.png")
     mask_path = os.path.join(TEST_FOLDER, f"mask_{img_id}.png")
 
-    # 1. Load Image UNCHANGED (High Fidelity)
+    # 1. Load Image UNCHANGED
     img_bgr_raw = cv2.imread(img_path, cv2.IMREAD_UNCHANGED)
     if img_bgr_raw is None: continue
 
-    # 2. Handle Channels (Sanitize)
+    # 2. Handle Channels
     if img_bgr_raw.ndim == 3 and img_bgr_raw.shape[2] == 4:
         img_bgr_raw = img_bgr_raw[:, :, :3]
     
@@ -93,8 +136,7 @@ for img_id in test_ids:
 
     H, W = img_rgb.shape[:2]
 
-    # 3. Load Mask (If provided in test set)
-    # If mask is missing, we might want to skip or use full tissue scan
+    # 3. Load Mask
     if not os.path.exists(mask_path): 
         print(f"Mask missing for {img_id}, skipping.")
         continue
@@ -121,19 +163,17 @@ for img_id in test_ids:
             
             mask_patch = mask_gray[y:y+INPUT_SIZE, x:x+INPUT_SIZE]
             
-            # Check Overlap
             if not patch_overlaps_mask(mask_patch, thresh=MASK_OVERLAP_THRESH):
                 continue
 
-            # Check Tissue
             patch_rgb = img_rgb[y:y+INPUT_SIZE, x:x+INPUT_SIZE]
             if not patch_has_tissue(patch_rgb, 
                                     frac_color_thresh=TISSUE_FRACTION_THRESH, 
                                     var_thresh=VARIANCE_THRESH):
                 continue
 
-            # SAVE PATCH
-            save_patch_test(img_id, y, x, img_rgb, patch_records)
+            # SAVE PATCH (Now passing mask_gray)
+            save_patch_test(img_id, y, x, img_rgb, mask_gray, patch_records)
             patches_generated_for_this_img += 1
 
     # --- D. FALLBACK: Largest Blob Logic ---
@@ -147,13 +187,8 @@ for img_id in test_ids:
         num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(dilated_mask, connectivity=8)
 
         if num_labels > 1:
-            # Get areas (ignoring background at index 0)
             object_areas = stats[1:, cv2.CC_STAT_AREA]
-            
-            # Sort indices by area in descending order (Largest -> Smallest)
             sorted_indices = np.argsort(object_areas)[::-1]
-            
-            # Select the top N indices (or fewer if fewer blobs exist)
             top_n_indices = sorted_indices[:NUM_PATCHES]
             
             for i, idx in enumerate(top_n_indices):
@@ -173,8 +208,8 @@ for img_id in test_ids:
                 fallback_y = max(0, min(H - INPUT_SIZE, fallback_y))
                 fallback_x = max(0, min(W - INPUT_SIZE, fallback_x))
 
-                # SAVE PATCH
-                save_patch_test(img_id, fallback_y, fallback_x, img_rgb, patch_records)
+                # SAVE PATCH (Now passing mask_gray)
+                save_patch_test(img_id, fallback_y, fallback_x, img_rgb, mask_gray, patch_records)
 
 print(f"Total kept test patches: {len(patch_records)}")
 
