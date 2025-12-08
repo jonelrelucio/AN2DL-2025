@@ -1,0 +1,1376 @@
+sample_index,label
+img_0.png,HER2(+)
+img_1.png,Luminal B
+img_2.png,HER2(+)
+img_3.png,Luminal A
+img_4.png,Luminal A
+img_5.png,Luminal B
+img_6.png,HER2(+)
+img_7.png,Luminal B
+img_8.png,Luminal B
+img_9.png,Luminal B
+img_10.png,Luminal B
+img_11.png,Luminal B
+img_12.png,Luminal B
+img_13.png,HER2(+)
+img_14.png,Luminal B
+img_15.png,Luminal B
+img_16.png,Luminal B
+img_17.png,Luminal B
+img_18.png,HER2(+)
+img_19.png,Luminal B
+img_20.png,Luminal A
+img_21.png,Luminal B
+img_22.png,Luminal B
+img_23.png,Luminal B
+img_24.png,Luminal B
+img_25.png,Luminal B
+img_26.png,HER2(+)
+img_27.png,HER2(+)
+img_28.png,Triple negative
+img_29.png,Luminal B
+img_30.png,HER2(+)
+img_31.png,HER2(+)
+img_32.png,HER2(+)
+img_33.png,HER2(+)
+img_34.png,HER2(+)
+img_35.png,HER2(+)
+img_36.png,Luminal B
+img_37.png,HER2(+)
+img_38.png,Luminal A
+img_39.png,Luminal A
+img_40.png,Luminal A
+img_41.png,Luminal B
+img_42.png,Luminal B
+img_43.png,Luminal B
+img_44.png,Luminal B
+img_45.png,Luminal B
+img_46.png,Luminal B
+img_47.png,Luminal B
+img_48.png,Luminal B
+img_49.png,Luminal B
+img_50.png,HER2(+)
+img_51.png,Luminal A
+img_52.png,Luminal A
+img_53.png,HER2(+)
+img_54.png,Luminal B
+img_55.png,HER2(+)
+img_56.png,Luminal B
+img_57.png,Luminal B
+img_58.png,Luminal B
+img_59.png,Luminal B
+img_60.png,Luminal A
+img_61.png,HER2(+)
+img_62.png,Luminal B
+img_63.png,HER2(+)
+img_64.png,Luminal A
+img_65.png,Luminal B
+img_66.png,Luminal B
+img_67.png,Luminal B
+img_68.png,HER2(+)
+img_69.png,Luminal A
+img_70.png,Luminal A
+img_71.png,HER2(+)
+img_72.png,Luminal B
+img_73.png,Luminal B
+img_74.png,Luminal B
+img_75.png,HER2(+)
+img_76.png,Luminal B
+img_77.png,Luminal B
+img_78.png,Luminal B
+img_79.png,HER2(+)
+img_80.png,Luminal B
+img_81.png,HER2(+)
+img_82.png,HER2(+)
+img_83.png,Luminal B
+img_84.png,HER2(+)
+img_85.png,HER2(+)
+img_86.png,Luminal A
+img_87.png,Luminal A
+img_88.png,HER2(+)
+img_89.png,Luminal B
+img_90.png,Luminal B
+img_91.png,Luminal B
+img_92.png,HER2(+)
+img_93.png,HER2(+)
+img_94.png,HER2(+)
+img_95.png,Luminal A
+img_96.png,Luminal B
+img_97.png,Luminal A
+img_98.png,Luminal B
+img_99.png,Luminal B
+img_100.png,Luminal B
+img_101.png,Luminal B
+img_102.png,HER2(+)
+img_103.png,HER2(+)
+img_104.png,Luminal B
+img_105.png,HER2(+)
+img_106.png,HER2(+)
+img_107.png,HER2(+)
+img_108.png,Luminal A
+img_109.png,HER2(+)
+img_110.png,Luminal B
+img_111.png,Luminal B
+img_112.png,Luminal B
+img_113.png,Luminal B
+img_114.png,Luminal B
+img_115.png,Luminal B
+img_116.png,HER2(+)
+img_117.png,Luminal B
+img_118.png,Luminal A
+img_119.png,HER2(+)
+img_120.png,Luminal B
+img_121.png,Luminal B
+img_122.png,Luminal B
+img_123.png,HER2(+)
+img_124.png,Luminal B
+img_125.png,HER2(+)
+img_126.png,Luminal B
+img_127.png,Luminal B
+img_128.png,Luminal A
+img_129.png,Luminal B
+img_130.png,Luminal B
+img_131.png,HER2(+)
+img_132.png,Luminal A
+img_133.png,HER2(+)
+img_134.png,HER2(+)
+img_135.png,Luminal A
+img_136.png,Luminal A
+img_137.png,HER2(+)
+img_138.png,Luminal B
+img_139.png,Luminal B
+img_140.png,Luminal B
+img_141.png,Luminal B
+img_142.png,Luminal B
+img_143.png,Luminal B
+img_144.png,Luminal B
+img_145.png,Luminal A
+img_146.png,Luminal B
+img_147.png,Luminal B
+img_148.png,Luminal B
+img_149.png,HER2(+)
+img_150.png,Luminal B
+img_151.png,Luminal B
+img_152.png,Luminal B
+img_153.png,HER2(+)
+img_154.png,Luminal B
+img_155.png,Luminal B
+img_156.png,Luminal B
+img_157.png,Luminal B
+img_158.png,Luminal B
+img_159.png,HER2(+)
+img_160.png,Luminal B
+img_161.png,Luminal A
+img_162.png,HER2(+)
+img_163.png,HER2(+)
+img_164.png,Luminal A
+img_165.png,Luminal B
+img_166.png,Luminal B
+img_167.png,Luminal B
+img_168.png,Luminal B
+img_169.png,Luminal B
+img_170.png,Luminal B
+img_171.png,Luminal B
+img_172.png,Luminal B
+img_173.png,Luminal B
+img_174.png,Luminal B
+img_175.png,HER2(+)
+img_176.png,HER2(+)
+img_177.png,Luminal B
+img_178.png,Luminal B
+img_179.png,Luminal B
+img_180.png,HER2(+)
+img_181.png,Luminal B
+img_182.png,Luminal B
+img_183.png,Luminal B
+img_184.png,Luminal B
+img_185.png,Luminal B
+img_186.png,HER2(+)
+img_187.png,Luminal B
+img_188.png,Luminal B
+img_189.png,Luminal A
+img_190.png,Luminal A
+img_191.png,HER2(+)
+img_192.png,HER2(+)
+img_193.png,Luminal A
+img_194.png,Luminal B
+img_195.png,Luminal B
+img_196.png,Luminal B
+img_197.png,HER2(+)
+img_198.png,HER2(+)
+img_199.png,Luminal A
+img_200.png,Luminal B
+img_201.png,Luminal B
+img_202.png,Luminal B
+img_203.png,Luminal B
+img_204.png,Luminal B
+img_205.png,Luminal B
+img_206.png,Luminal A
+img_207.png,Luminal B
+img_208.png,Luminal A
+img_209.png,HER2(+)
+img_210.png,Luminal A
+img_211.png,HER2(+)
+img_212.png,HER2(+)
+img_213.png,HER2(+)
+img_214.png,Luminal B
+img_215.png,HER2(+)
+img_216.png,Luminal B
+img_217.png,Luminal B
+img_218.png,Luminal B
+img_219.png,Luminal A
+img_220.png,Luminal B
+img_221.png,HER2(+)
+img_222.png,HER2(+)
+img_223.png,Luminal B
+img_224.png,Luminal B
+img_225.png,Luminal B
+img_226.png,Luminal B
+img_227.png,Luminal B
+img_228.png,Luminal B
+img_229.png,Luminal B
+img_230.png,Luminal B
+img_231.png,Luminal B
+img_232.png,Luminal B
+img_233.png,Luminal B
+img_234.png,Luminal B
+img_235.png,Luminal B
+img_236.png,Luminal B
+img_237.png,Luminal A
+img_238.png,HER2(+)
+img_239.png,Luminal B
+img_240.png,Luminal A
+img_241.png,Luminal B
+img_242.png,HER2(+)
+img_243.png,Luminal B
+img_244.png,HER2(+)
+img_245.png,HER2(+)
+img_246.png,HER2(+)
+img_247.png,Luminal B
+img_248.png,Luminal A
+img_249.png,Luminal B
+img_250.png,Luminal B
+img_251.png,Luminal B
+img_252.png,Luminal B
+img_253.png,HER2(+)
+img_254.png,HER2(+)
+img_255.png,HER2(+)
+img_256.png,HER2(+)
+img_257.png,Luminal B
+img_258.png,Luminal B
+img_259.png,Luminal B
+img_260.png,Luminal B
+img_261.png,Luminal B
+img_262.png,Luminal B
+img_263.png,Luminal B
+img_264.png,HER2(+)
+img_265.png,Luminal B
+img_266.png,HER2(+)
+img_267.png,Luminal A
+img_268.png,Luminal B
+img_269.png,Luminal B
+img_270.png,Luminal B
+img_271.png,Luminal B
+img_272.png,Luminal B
+img_273.png,Luminal B
+img_274.png,Luminal B
+img_275.png,HER2(+)
+img_276.png,Luminal B
+img_277.png,Luminal B
+img_278.png,Luminal B
+img_279.png,Luminal B
+img_280.png,Luminal B
+img_281.png,Luminal B
+img_282.png,HER2(+)
+img_283.png,Luminal B
+img_284.png,Luminal B
+img_285.png,Luminal B
+img_286.png,Luminal B
+img_287.png,HER2(+)
+img_288.png,Luminal B
+img_289.png,HER2(+)
+img_290.png,Luminal A
+img_291.png,Luminal B
+img_292.png,Luminal A
+img_293.png,Luminal B
+img_294.png,Luminal B
+img_295.png,Luminal B
+img_296.png,Luminal B
+img_297.png,Luminal B
+img_298.png,Luminal B
+img_299.png,Luminal B
+img_300.png,HER2(+)
+img_301.png,Luminal B
+img_302.png,Luminal B
+img_303.png,Luminal B
+img_304.png,Luminal B
+img_305.png,Luminal A
+img_306.png,Luminal B
+img_307.png,Luminal B
+img_308.png,HER2(+)
+img_309.png,Luminal B
+img_310.png,Luminal B
+img_311.png,Luminal B
+img_312.png,Luminal B
+img_313.png,HER2(+)
+img_314.png,HER2(+)
+img_315.png,HER2(+)
+img_316.png,HER2(+)
+img_317.png,Luminal A
+img_318.png,Luminal A
+img_319.png,Luminal A
+img_320.png,Luminal B
+img_321.png,HER2(+)
+img_322.png,HER2(+)
+img_323.png,Luminal B
+img_324.png,Luminal B
+img_325.png,Luminal B
+img_326.png,Luminal B
+img_327.png,Luminal B
+img_328.png,Luminal B
+img_329.png,Luminal B
+img_330.png,Luminal B
+img_331.png,Luminal B
+img_332.png,Luminal B
+img_333.png,Luminal B
+img_334.png,Luminal B
+img_335.png,Luminal B
+img_336.png,Luminal A
+img_337.png,Luminal B
+img_338.png,Luminal B
+img_339.png,Luminal B
+img_340.png,Luminal B
+img_341.png,Luminal B
+img_342.png,Luminal B
+img_343.png,Luminal B
+img_344.png,Luminal B
+img_345.png,Luminal B
+img_346.png,HER2(+)
+img_347.png,HER2(+)
+img_348.png,Luminal B
+img_349.png,HER2(+)
+img_350.png,Luminal B
+img_351.png,Luminal B
+img_352.png,Luminal B
+img_353.png,Luminal B
+img_354.png,Luminal B
+img_355.png,Luminal B
+img_356.png,Triple negative
+img_357.png,Luminal B
+img_358.png,HER2(+)
+img_359.png,Luminal B
+img_360.png,HER2(+)
+img_361.png,Luminal B
+img_362.png,Luminal B
+img_363.png,HER2(+)
+img_364.png,HER2(+)
+img_365.png,HER2(+)
+img_366.png,HER2(+)
+img_367.png,Luminal B
+img_368.png,Luminal B
+img_369.png,HER2(+)
+img_370.png,Luminal B
+img_371.png,Luminal B
+img_372.png,Luminal B
+img_373.png,Luminal B
+img_374.png,Luminal B
+img_375.png,Luminal B
+img_376.png,Luminal B
+img_377.png,Luminal A
+img_378.png,Luminal B
+img_379.png,HER2(+)
+img_380.png,HER2(+)
+img_381.png,Luminal B
+img_382.png,Luminal B
+img_383.png,Luminal B
+img_384.png,Luminal A
+img_385.png,Luminal A
+img_386.png,Luminal B
+img_387.png,Luminal B
+img_388.png,Luminal B
+img_389.png,Luminal B
+img_390.png,Luminal B
+img_391.png,Luminal B
+img_392.png,HER2(+)
+img_393.png,HER2(+)
+img_394.png,Luminal B
+img_395.png,Luminal B
+img_396.png,Luminal B
+img_397.png,Luminal B
+img_398.png,HER2(+)
+img_399.png,HER2(+)
+img_400.png,HER2(+)
+img_401.png,Luminal B
+img_402.png,Luminal A
+img_403.png,Luminal B
+img_404.png,Luminal B
+img_405.png,Luminal B
+img_406.png,Luminal B
+img_407.png,Luminal B
+img_408.png,Luminal B
+img_409.png,Luminal B
+img_410.png,HER2(+)
+img_411.png,HER2(+)
+img_412.png,HER2(+)
+img_413.png,Luminal A
+img_414.png,Luminal A
+img_415.png,Luminal A
+img_416.png,Luminal B
+img_417.png,Luminal B
+img_418.png,HER2(+)
+img_419.png,Luminal B
+img_420.png,Luminal B
+img_421.png,Luminal B
+img_422.png,HER2(+)
+img_423.png,HER2(+)
+img_424.png,HER2(+)
+img_425.png,Luminal B
+img_426.png,Luminal B
+img_427.png,Luminal B
+img_428.png,Luminal B
+img_429.png,Luminal B
+img_430.png,Luminal A
+img_431.png,Luminal B
+img_432.png,Luminal B
+img_433.png,HER2(+)
+img_434.png,HER2(+)
+img_435.png,Luminal B
+img_436.png,Luminal B
+img_437.png,Luminal B
+img_438.png,Luminal B
+img_439.png,Luminal B
+img_440.png,Luminal B
+img_441.png,Luminal B
+img_442.png,Luminal B
+img_443.png,Luminal B
+img_444.png,Luminal B
+img_445.png,Luminal B
+img_446.png,Luminal B
+img_447.png,Luminal B
+img_448.png,Luminal B
+img_449.png,Luminal B
+img_450.png,HER2(+)
+img_451.png,HER2(+)
+img_452.png,HER2(+)
+img_453.png,Luminal B
+img_454.png,Luminal B
+img_455.png,Luminal B
+img_456.png,HER2(+)
+img_457.png,HER2(+)
+img_458.png,HER2(+)
+img_459.png,Luminal B
+img_460.png,HER2(+)
+img_461.png,HER2(+)
+img_462.png,HER2(+)
+img_463.png,HER2(+)
+img_464.png,HER2(+)
+img_465.png,HER2(+)
+img_466.png,Luminal B
+img_467.png,Luminal B
+img_468.png,Luminal B
+img_469.png,Luminal B
+img_470.png,Luminal B
+img_471.png,Luminal B
+img_472.png,Luminal B
+img_473.png,Luminal B
+img_474.png,Luminal B
+img_475.png,HER2(+)
+img_476.png,HER2(+)
+img_477.png,Luminal A
+img_478.png,Luminal A
+img_479.png,Luminal B
+img_480.png,Luminal B
+img_481.png,Luminal B
+img_482.png,Luminal B
+img_483.png,Luminal B
+img_484.png,Luminal B
+img_485.png,Luminal B
+img_486.png,Luminal B
+img_487.png,Luminal B
+img_488.png,Luminal B
+img_489.png,Luminal B
+img_490.png,HER2(+)
+img_491.png,HER2(+)
+img_492.png,HER2(+)
+img_493.png,Luminal A
+img_494.png,Luminal A
+img_495.png,Luminal B
+img_496.png,Luminal A
+img_497.png,Luminal B
+img_498.png,HER2(+)
+img_499.png,Luminal B
+img_500.png,Luminal B
+img_501.png,Luminal B
+img_502.png,Luminal B
+img_503.png,Luminal B
+img_504.png,Luminal B
+img_505.png,HER2(+)
+img_506.png,Luminal B
+img_507.png,Luminal B
+img_508.png,Luminal B
+img_509.png,Luminal A
+img_510.png,Luminal A
+img_511.png,Luminal A
+img_512.png,Luminal B
+img_513.png,Luminal B
+img_514.png,Luminal B
+img_515.png,Luminal B
+img_516.png,Luminal B
+img_517.png,Luminal B
+img_518.png,Luminal B
+img_519.png,Luminal B
+img_520.png,Luminal B
+img_521.png,HER2(+)
+img_522.png,HER2(+)
+img_523.png,Luminal B
+img_524.png,Luminal A
+img_525.png,Luminal A
+img_526.png,Luminal B
+img_527.png,Luminal B
+img_528.png,Luminal B
+img_529.png,HER2(+)
+img_530.png,Luminal B
+img_531.png,Luminal B
+img_532.png,Luminal B
+img_533.png,HER2(+)
+img_534.png,HER2(+)
+img_535.png,Luminal B
+img_536.png,Luminal B
+img_537.png,Luminal B
+img_538.png,Luminal A
+img_539.png,Luminal B
+img_540.png,Luminal B
+img_541.png,Luminal B
+img_542.png,Luminal A
+img_543.png,Luminal B
+img_544.png,Luminal A
+img_545.png,HER2(+)
+img_546.png,HER2(+)
+img_547.png,HER2(+)
+img_548.png,Luminal A
+img_549.png,HER2(+)
+img_550.png,Luminal A
+img_551.png,Luminal A
+img_552.png,Luminal B
+img_553.png,Luminal B
+img_554.png,Luminal B
+img_555.png,Luminal A
+img_556.png,Luminal B
+img_557.png,Luminal A
+img_558.png,Luminal B
+img_559.png,Luminal B
+img_560.png,Luminal B
+img_561.png,HER2(+)
+img_562.png,HER2(+)
+img_563.png,Luminal A
+img_564.png,Luminal B
+img_565.png,Luminal B
+img_566.png,Luminal B
+img_567.png,Luminal B
+img_568.png,Luminal A
+img_569.png,Luminal A
+img_570.png,HER2(+)
+img_571.png,Luminal A
+img_572.png,Luminal B
+img_573.png,Luminal B
+img_574.png,Luminal B
+img_575.png,HER2(+)
+img_576.png,HER2(+)
+img_577.png,Luminal A
+img_578.png,Luminal A
+img_579.png,Luminal B
+img_580.png,HER2(+)
+img_581.png,Luminal B
+img_582.png,Luminal B
+img_583.png,Luminal B
+img_584.png,HER2(+)
+img_585.png,HER2(+)
+img_586.png,HER2(+)
+img_587.png,Luminal A
+img_588.png,Luminal B
+img_589.png,Luminal B
+img_590.png,HER2(+)
+img_591.png,HER2(+)
+img_592.png,HER2(+)
+img_593.png,Luminal B
+img_594.png,Luminal B
+img_595.png,Luminal B
+img_596.png,Luminal A
+img_597.png,Luminal B
+img_598.png,Luminal B
+img_599.png,HER2(+)
+img_600.png,HER2(+)
+img_601.png,HER2(+)
+img_602.png,Luminal B
+img_603.png,Luminal B
+img_604.png,HER2(+)
+img_605.png,Luminal A
+img_606.png,HER2(+)
+img_607.png,HER2(+)
+img_608.png,Luminal B
+img_609.png,Luminal B
+img_610.png,Luminal B
+img_611.png,Luminal A
+img_612.png,HER2(+)
+img_613.png,HER2(+)
+img_614.png,Luminal A
+img_615.png,Luminal A
+img_616.png,Luminal B
+img_617.png,HER2(+)
+img_618.png,Luminal B
+img_619.png,Luminal B
+img_620.png,HER2(+)
+img_621.png,HER2(+)
+img_622.png,HER2(+)
+img_623.png,Luminal B
+img_624.png,Luminal B
+img_625.png,Luminal A
+img_626.png,Luminal B
+img_627.png,Luminal B
+img_628.png,Luminal B
+img_629.png,Luminal A
+img_630.png,Luminal B
+img_631.png,Luminal A
+img_632.png,Luminal A
+img_633.png,Luminal A
+img_634.png,Luminal A
+img_635.png,HER2(+)
+img_636.png,Luminal B
+img_637.png,HER2(+)
+img_638.png,Luminal B
+img_639.png,Luminal B
+img_640.png,Luminal B
+img_641.png,Luminal B
+img_642.png,Luminal A
+img_643.png,Luminal A
+img_644.png,Luminal B
+img_645.png,Luminal B
+img_646.png,Luminal B
+img_647.png,Luminal B
+img_648.png,HER2(+)
+img_649.png,Luminal A
+img_650.png,Luminal B
+img_651.png,Luminal B
+img_652.png,Luminal B
+img_653.png,HER2(+)
+img_654.png,Luminal B
+img_655.png,Luminal B
+img_656.png,Luminal B
+img_657.png,Luminal B
+img_658.png,Luminal B
+img_659.png,HER2(+)
+img_660.png,Luminal A
+img_661.png,Luminal B
+img_662.png,Luminal B
+img_663.png,Luminal B
+img_664.png,Luminal B
+img_665.png,HER2(+)
+img_666.png,HER2(+)
+img_667.png,HER2(+)
+img_668.png,Luminal B
+img_669.png,Luminal B
+img_670.png,Luminal B
+img_671.png,Luminal B
+img_672.png,Luminal B
+img_673.png,Luminal B
+img_674.png,Luminal B
+img_675.png,Luminal B
+img_676.png,HER2(+)
+img_677.png,HER2(+)
+img_678.png,HER2(+)
+img_679.png,Luminal B
+img_680.png,Luminal B
+img_681.png,HER2(+)
+img_682.png,Luminal B
+img_683.png,Luminal B
+img_684.png,Luminal B
+img_685.png,Luminal B
+img_686.png,Luminal B
+img_687.png,HER2(+)
+img_688.png,Luminal B
+img_689.png,Luminal B
+img_690.png,Luminal B
+img_691.png,HER2(+)
+img_692.png,HER2(+)
+img_693.png,Luminal B
+img_694.png,Luminal A
+img_695.png,HER2(+)
+img_696.png,Luminal A
+img_697.png,Luminal B
+img_698.png,Luminal B
+img_699.png,Luminal B
+img_700.png,Luminal B
+img_701.png,Luminal B
+img_702.png,HER2(+)
+img_703.png,Luminal B
+img_704.png,Luminal B
+img_705.png,Luminal B
+img_706.png,Luminal B
+img_707.png,Luminal B
+img_708.png,Luminal B
+img_709.png,Luminal B
+img_710.png,Luminal B
+img_711.png,Luminal B
+img_712.png,Luminal B
+img_713.png,Luminal B
+img_714.png,Luminal B
+img_715.png,Luminal B
+img_716.png,Luminal B
+img_717.png,Luminal A
+img_718.png,HER2(+)
+img_719.png,Luminal B
+img_720.png,Luminal B
+img_721.png,Luminal B
+img_722.png,Luminal B
+img_723.png,HER2(+)
+img_724.png,Luminal B
+img_725.png,Luminal B
+img_726.png,HER2(+)
+img_727.png,Luminal B
+img_728.png,Luminal A
+img_729.png,Luminal B
+img_730.png,Luminal B
+img_731.png,Luminal B
+img_732.png,Luminal B
+img_733.png,Luminal B
+img_734.png,Luminal B
+img_735.png,Luminal B
+img_736.png,Luminal B
+img_737.png,Luminal B
+img_738.png,Luminal B
+img_739.png,Luminal B
+img_740.png,HER2(+)
+img_741.png,Luminal B
+img_742.png,Luminal B
+img_743.png,Luminal B
+img_744.png,Luminal B
+img_745.png,Luminal B
+img_746.png,Luminal B
+img_747.png,Luminal B
+img_748.png,Luminal B
+img_749.png,Luminal B
+img_750.png,HER2(+)
+img_751.png,Luminal B
+img_752.png,Luminal B
+img_753.png,HER2(+)
+img_754.png,HER2(+)
+img_755.png,Luminal B
+img_756.png,Luminal B
+img_757.png,Luminal B
+img_758.png,Luminal B
+img_759.png,Luminal B
+img_760.png,Luminal B
+img_761.png,Luminal B
+img_762.png,Luminal B
+img_763.png,Luminal B
+img_764.png,Luminal B
+img_765.png,Luminal B
+img_766.png,HER2(+)
+img_767.png,HER2(+)
+img_768.png,HER2(+)
+img_769.png,Luminal B
+img_770.png,Luminal B
+img_771.png,Luminal B
+img_772.png,Luminal B
+img_773.png,HER2(+)
+img_774.png,HER2(+)
+img_775.png,HER2(+)
+img_776.png,Luminal A
+img_777.png,Luminal A
+img_778.png,Luminal A
+img_779.png,HER2(+)
+img_780.png,Luminal B
+img_781.png,HER2(+)
+img_782.png,Luminal B
+img_783.png,Luminal B
+img_784.png,Luminal B
+img_785.png,Luminal A
+img_786.png,HER2(+)
+img_787.png,Luminal A
+img_788.png,Luminal B
+img_789.png,Luminal A
+img_790.png,Luminal A
+img_791.png,Luminal A
+img_792.png,HER2(+)
+img_793.png,HER2(+)
+img_794.png,Luminal B
+img_795.png,Luminal B
+img_796.png,Luminal B
+img_797.png,HER2(+)
+img_798.png,Luminal B
+img_799.png,HER2(+)
+img_800.png,Luminal B
+img_801.png,Luminal B
+img_802.png,Luminal B
+img_803.png,Luminal B
+img_804.png,Luminal B
+img_805.png,Luminal A
+img_806.png,HER2(+)
+img_807.png,HER2(+)
+img_808.png,HER2(+)
+img_809.png,HER2(+)
+img_810.png,HER2(+)
+img_811.png,HER2(+)
+img_812.png,Luminal A
+img_813.png,Luminal A
+img_814.png,Luminal A
+img_815.png,Luminal B
+img_816.png,Luminal B
+img_817.png,Luminal B
+img_818.png,Luminal A
+img_819.png,Luminal A
+img_820.png,Luminal A
+img_821.png,HER2(+)
+img_822.png,Luminal A
+img_823.png,Luminal A
+img_824.png,Luminal B
+img_825.png,Luminal B
+img_826.png,Luminal B
+img_827.png,Luminal B
+img_828.png,Luminal B
+img_829.png,Luminal B
+img_830.png,Luminal B
+img_831.png,Luminal B
+img_832.png,Luminal B
+img_833.png,Luminal B
+img_834.png,Luminal B
+img_835.png,Luminal B
+img_836.png,Luminal A
+img_837.png,Luminal B
+img_838.png,Luminal B
+img_839.png,Luminal B
+img_840.png,Luminal B
+img_841.png,Luminal A
+img_842.png,HER2(+)
+img_843.png,Luminal B
+img_844.png,Luminal B
+img_845.png,HER2(+)
+img_846.png,Luminal B
+img_847.png,HER2(+)
+img_848.png,Luminal B
+img_849.png,Luminal B
+img_850.png,Luminal B
+img_851.png,Luminal B
+img_852.png,Luminal B
+img_853.png,Luminal B
+img_854.png,Luminal B
+img_855.png,Luminal B
+img_856.png,Luminal B
+img_857.png,Luminal B
+img_858.png,Luminal B
+img_859.png,Luminal A
+img_860.png,Luminal B
+img_861.png,Luminal B
+img_862.png,Luminal B
+img_863.png,Luminal B
+img_864.png,Luminal B
+img_865.png,HER2(+)
+img_866.png,Luminal A
+img_867.png,Luminal B
+img_868.png,HER2(+)
+img_869.png,Luminal A
+img_870.png,Luminal A
+img_871.png,Luminal B
+img_872.png,Luminal A
+img_873.png,Luminal B
+img_874.png,Luminal B
+img_875.png,Luminal B
+img_876.png,Luminal B
+img_877.png,Luminal B
+img_878.png,Luminal A
+img_879.png,Luminal A
+img_880.png,Luminal A
+img_881.png,HER2(+)
+img_882.png,HER2(+)
+img_883.png,Luminal B
+img_884.png,Luminal B
+img_885.png,Luminal B
+img_886.png,Luminal B
+img_887.png,Luminal A
+img_888.png,Luminal A
+img_889.png,Luminal B
+img_890.png,Luminal B
+img_891.png,Luminal B
+img_892.png,Luminal B
+img_893.png,Luminal A
+img_894.png,HER2(+)
+img_895.png,HER2(+)
+img_896.png,Luminal A
+img_897.png,Luminal A
+img_898.png,HER2(+)
+img_899.png,Luminal B
+img_900.png,Luminal B
+img_901.png,Luminal A
+img_902.png,Luminal A
+img_903.png,HER2(+)
+img_904.png,Luminal B
+img_905.png,HER2(+)
+img_906.png,Luminal A
+img_907.png,HER2(+)
+img_908.png,Luminal A
+img_909.png,Luminal A
+img_910.png,Luminal B
+img_911.png,Luminal B
+img_912.png,HER2(+)
+img_913.png,HER2(+)
+img_914.png,HER2(+)
+img_915.png,Luminal B
+img_916.png,Luminal B
+img_917.png,HER2(+)
+img_918.png,Luminal B
+img_919.png,Luminal B
+img_920.png,HER2(+)
+img_921.png,HER2(+)
+img_922.png,Luminal B
+img_923.png,Luminal B
+img_924.png,Luminal A
+img_925.png,Luminal A
+img_926.png,Luminal B
+img_927.png,Luminal B
+img_928.png,HER2(+)
+img_929.png,Luminal B
+img_930.png,Luminal B
+img_931.png,Luminal B
+img_932.png,Luminal B
+img_933.png,Luminal B
+img_934.png,Luminal B
+img_935.png,Luminal B
+img_936.png,Luminal B
+img_937.png,Luminal B
+img_938.png,HER2(+)
+img_939.png,Luminal B
+img_940.png,Luminal A
+img_941.png,HER2(+)
+img_942.png,Luminal A
+img_943.png,Luminal B
+img_944.png,Luminal B
+img_945.png,Luminal B
+img_946.png,Luminal B
+img_947.png,Luminal B
+img_948.png,HER2(+)
+img_949.png,HER2(+)
+img_950.png,HER2(+)
+img_951.png,HER2(+)
+img_952.png,Luminal B
+img_953.png,Luminal B
+img_954.png,Luminal B
+img_955.png,Luminal B
+img_956.png,Luminal B
+img_957.png,Luminal B
+img_958.png,Luminal B
+img_959.png,HER2(+)
+img_960.png,Luminal B
+img_961.png,Luminal B
+img_962.png,HER2(+)
+img_963.png,Luminal B
+img_964.png,HER2(+)
+img_965.png,HER2(+)
+img_966.png,HER2(+)
+img_967.png,Luminal B
+img_968.png,Luminal B
+img_969.png,Luminal B
+img_970.png,Luminal B
+img_971.png,HER2(+)
+img_972.png,Luminal B
+img_973.png,Luminal B
+img_974.png,Luminal B
+img_975.png,Luminal B
+img_976.png,HER2(+)
+img_977.png,Luminal B
+img_978.png,HER2(+)
+img_979.png,Luminal B
+img_980.png,Luminal B
+img_981.png,Luminal A
+img_982.png,Luminal B
+img_983.png,Luminal B
+img_984.png,Luminal A
+img_985.png,Luminal A
+img_986.png,Luminal A
+img_987.png,Luminal B
+img_988.png,Luminal B
+img_989.png,Luminal B
+img_990.png,HER2(+)
+img_991.png,HER2(+)
+img_992.png,HER2(+)
+img_993.png,Luminal B
+img_994.png,Luminal B
+img_995.png,Luminal B
+img_996.png,HER2(+)
+img_997.png,HER2(+)
+img_998.png,Luminal B
+img_999.png,Luminal B
+img_1000.png,Luminal B
+img_1001.png,HER2(+)
+img_1002.png,Luminal B
+img_1003.png,Luminal B
+img_1004.png,Luminal B
+img_1005.png,HER2(+)
+img_1006.png,Luminal B
+img_1007.png,HER2(+)
+img_1008.png,Luminal B
+img_1009.png,HER2(+)
+img_1010.png,HER2(+)
+img_1011.png,Luminal A
+img_1012.png,Luminal B
+img_1013.png,Luminal B
+img_1014.png,Luminal B
+img_1015.png,Luminal B
+img_1016.png,Luminal B
+img_1017.png,Luminal B
+img_1018.png,HER2(+)
+img_1019.png,Luminal B
+img_1020.png,Luminal B
+img_1021.png,Luminal A
+img_1022.png,Luminal A
+img_1023.png,Luminal A
+img_1024.png,Luminal B
+img_1025.png,Luminal B
+img_1026.png,Luminal B
+img_1027.png,Luminal B
+img_1028.png,Luminal B
+img_1029.png,Luminal B
+img_1030.png,Luminal B
+img_1031.png,Luminal B
+img_1032.png,Luminal A
+img_1033.png,Luminal B
+img_1034.png,Luminal A
+img_1035.png,Luminal B
+img_1036.png,Luminal B
+img_1037.png,Luminal B
+img_1038.png,HER2(+)
+img_1039.png,Luminal B
+img_1040.png,HER2(+)
+img_1041.png,Luminal B
+img_1042.png,Luminal B
+img_1043.png,Luminal B
+img_1044.png,Luminal B
+img_1045.png,Luminal B
+img_1046.png,Luminal B
+img_1047.png,Luminal B
+img_1048.png,Luminal B
+img_1049.png,HER2(+)
+img_1050.png,HER2(+)
+img_1051.png,Luminal B
+img_1052.png,Luminal B
+img_1053.png,Luminal B
+img_1054.png,Luminal B
+img_1055.png,HER2(+)
+img_1056.png,HER2(+)
+img_1057.png,HER2(+)
+img_1058.png,Luminal A
+img_1059.png,Luminal A
+img_1060.png,Luminal B
+img_1061.png,Luminal B
+img_1062.png,Luminal A
+img_1063.png,HER2(+)
+img_1064.png,HER2(+)
+img_1065.png,Luminal B
+img_1066.png,Luminal B
+img_1067.png,HER2(+)
+img_1068.png,HER2(+)
+img_1069.png,Luminal A
+img_1070.png,HER2(+)
+img_1071.png,Luminal B
+img_1072.png,Luminal B
+img_1073.png,Luminal B
+img_1074.png,Luminal B
+img_1075.png,Luminal B
+img_1076.png,Luminal B
+img_1077.png,Luminal B
+img_1078.png,Luminal A
+img_1079.png,Luminal B
+img_1080.png,Luminal B
+img_1081.png,HER2(+)
+img_1082.png,HER2(+)
+img_1083.png,Luminal A
+img_1084.png,Luminal A
+img_1085.png,Luminal B
+img_1086.png,Luminal B
+img_1087.png,Luminal B
+img_1088.png,HER2(+)
+img_1089.png,HER2(+)
+img_1090.png,Luminal B
+img_1091.png,HER2(+)
+img_1092.png,HER2(+)
+img_1093.png,Luminal B
+img_1094.png,Luminal B
+img_1095.png,Luminal B
+img_1096.png,Luminal B
+img_1097.png,Luminal B
+img_1098.png,HER2(+)
+img_1099.png,Luminal B
+img_1100.png,Luminal B
+img_1101.png,Luminal B
+img_1102.png,Luminal B
+img_1103.png,Luminal B
+img_1104.png,Luminal B
+img_1105.png,Luminal B
+img_1106.png,Luminal A
+img_1107.png,HER2(+)
+img_1108.png,Luminal B
+img_1109.png,Luminal B
+img_1110.png,Luminal B
+img_1111.png,Luminal B
+img_1112.png,Luminal A
+img_1113.png,Luminal B
+img_1114.png,Luminal B
+img_1115.png,HER2(+)
+img_1116.png,HER2(+)
+img_1117.png,HER2(+)
+img_1118.png,Luminal B
+img_1119.png,Luminal B
+img_1120.png,Luminal B
+img_1121.png,Luminal B
+img_1122.png,Luminal B
+img_1123.png,Luminal B
+img_1124.png,HER2(+)
+img_1125.png,HER2(+)
+img_1126.png,Luminal B
+img_1127.png,HER2(+)
+img_1128.png,HER2(+)
+img_1129.png,HER2(+)
+img_1130.png,Luminal B
+img_1131.png,Luminal B
+img_1132.png,Luminal A
+img_1133.png,HER2(+)
+img_1134.png,Luminal B
+img_1135.png,Luminal A
+img_1136.png,Luminal B
+img_1137.png,Luminal B
+img_1138.png,Luminal B
+img_1139.png,Luminal B
+img_1140.png,Luminal B
+img_1141.png,Luminal A
+img_1142.png,Luminal B
+img_1143.png,Luminal B
+img_1144.png,Luminal B
+img_1145.png,HER2(+)
+img_1146.png,Luminal A
+img_1147.png,Luminal A
+img_1148.png,HER2(+)
+img_1149.png,HER2(+)
+img_1150.png,HER2(+)
+img_1151.png,Luminal B
+img_1152.png,Luminal B
+img_1153.png,Luminal B
+img_1154.png,HER2(+)
+img_1155.png,HER2(+)
+img_1156.png,Luminal B
+img_1157.png,Luminal B
+img_1158.png,Luminal B
+img_1159.png,Luminal B
+img_1160.png,Luminal A
+img_1161.png,Luminal B
+img_1162.png,Luminal A
+img_1163.png,Luminal B
+img_1164.png,Luminal B
+img_1165.png,HER2(+)
+img_1166.png,Luminal B
+img_1167.png,Luminal B
+img_1168.png,HER2(+)
+img_1169.png,HER2(+)
+img_1170.png,HER2(+)
+img_1171.png,Luminal B
+img_1172.png,Luminal B
+img_1173.png,Luminal B
+img_1174.png,Luminal B
+img_1175.png,Luminal B
+img_1176.png,Luminal B
+img_1177.png,HER2(+)
+img_1178.png,Luminal B
+img_1179.png,Luminal B
+img_1180.png,Luminal B
+img_1181.png,Luminal A
+img_1182.png,Luminal A
+img_1183.png,HER2(+)
+img_1184.png,HER2(+)
+img_1185.png,HER2(+)
+img_1186.png,HER2(+)
+img_1187.png,HER2(+)
+img_1188.png,HER2(+)
+img_1189.png,Luminal B
+img_1190.png,Luminal B
+img_1191.png,HER2(+)
+img_1192.png,HER2(+)
+img_1193.png,HER2(+)
+img_1194.png,HER2(+)
+img_1195.png,Luminal B
+img_1196.png,Luminal B
+img_1197.png,Luminal B
+img_1198.png,HER2(+)
+img_1199.png,HER2(+)
+img_1200.png,HER2(+)
+img_1201.png,Luminal B
+img_1202.png,Luminal B
+img_1203.png,Luminal B
+img_1204.png,Luminal A
+img_1205.png,HER2(+)
+img_1206.png,Luminal A
+img_1207.png,Luminal A
+img_1208.png,Luminal B
+img_1209.png,HER2(+)
+img_1210.png,HER2(+)
+img_1211.png,HER2(+)
+img_1212.png,Luminal A
+img_1213.png,Luminal A
+img_1214.png,Luminal A
+img_1215.png,HER2(+)
+img_1216.png,HER2(+)
+img_1217.png,Luminal B
+img_1218.png,Luminal B
+img_1219.png,Luminal B
+img_1220.png,Luminal B
+img_1221.png,HER2(+)
+img_1222.png,Luminal B
+img_1223.png,HER2(+)
+img_1224.png,Luminal B
+img_1225.png,Luminal B
+img_1226.png,Luminal B
+img_1227.png,Luminal B
+img_1228.png,Luminal B
+img_1229.png,HER2(+)
+img_1230.png,Luminal A
+img_1231.png,Luminal B
+img_1232.png,HER2(+)
+img_1233.png,HER2(+)
+img_1234.png,Luminal A
+img_1235.png,Luminal B
+img_1236.png,Luminal B
+img_1237.png,Luminal B
+img_1238.png,Luminal B
+img_1239.png,Luminal A
+img_1240.png,Luminal B
+img_1241.png,Luminal B
+img_1242.png,Luminal B
+img_1243.png,HER2(+)
+img_1244.png,HER2(+)
+img_1245.png,Luminal B
+img_1246.png,Luminal B
+img_1247.png,Luminal B
+img_1248.png,Luminal B
+img_1249.png,Luminal B
+img_1250.png,Luminal B
+img_1251.png,Luminal B
+img_1252.png,Luminal B
+img_1253.png,Luminal B
+img_1254.png,Luminal A
+img_1255.png,Luminal B
+img_1256.png,Luminal B
+img_1257.png,Luminal B
+img_1258.png,Luminal B
+img_1259.png,Luminal B
+img_1260.png,Luminal B
+img_1261.png,Luminal B
+img_1262.png,Luminal B
+img_1263.png,Luminal B
+img_1264.png,HER2(+)
+img_1265.png,HER2(+)
+img_1266.png,HER2(+)
+img_1267.png,Luminal B
+img_1268.png,HER2(+)
+img_1269.png,HER2(+)
+img_1270.png,Luminal A
+img_1271.png,HER2(+)
+img_1272.png,Luminal B
+img_1273.png,Luminal B
+img_1274.png,Luminal B
+img_1275.png,Luminal B
+img_1276.png,Luminal B
+img_1277.png,Luminal A
+img_1278.png,Luminal B
+img_1279.png,Luminal B
+img_1280.png,Luminal A
+img_1281.png,Luminal A
+img_1282.png,Luminal B
+img_1283.png,Luminal A
+img_1284.png,Luminal A
+img_1285.png,Luminal B
+img_1286.png,HER2(+)
+img_1287.png,Luminal B
+img_1288.png,Luminal B
+img_1289.png,Luminal B
+img_1290.png,Luminal B
+img_1291.png,Luminal B
+img_1292.png,HER2(+)
+img_1293.png,Luminal B
+img_1294.png,HER2(+)
+img_1295.png,HER2(+)
+img_1296.png,Luminal B
+img_1297.png,Luminal B
+img_1298.png,Luminal B
+img_1299.png,Luminal B
+img_1300.png,Luminal B
+img_1301.png,Luminal B
+img_1302.png,Luminal B
+img_1303.png,Luminal B
+img_1304.png,Luminal A
+img_1305.png,Luminal B
+img_1306.png,Luminal B
+img_1307.png,Luminal B
+img_1308.png,Luminal B
+img_1309.png,Luminal A
+img_1310.png,Luminal B
+img_1311.png,Luminal B
+img_1312.png,Luminal B
+img_1313.png,Luminal A
+img_1314.png,Luminal A
+img_1315.png,Luminal A
+img_1316.png,Luminal A
+img_1317.png,Luminal A
+img_1318.png,Luminal A
+img_1319.png,Luminal B
+img_1320.png,Luminal B
+img_1321.png,Luminal B
+img_1322.png,Luminal B
+img_1323.png,Luminal B
+img_1324.png,Luminal B
+img_1325.png,HER2(+)
+img_1326.png,Luminal B
+img_1327.png,Luminal A
+img_1328.png,Luminal B
+img_1329.png,HER2(+)
+img_1330.png,Luminal A
+img_1331.png,Luminal B
+img_1332.png,Luminal A
+img_1333.png,Luminal B
+img_1334.png,Luminal B
+img_1335.png,Luminal B
+img_1336.png,Luminal B
+img_1337.png,Luminal B
+img_1338.png,Luminal B
+img_1339.png,Luminal B
+img_1340.png,Luminal B
+img_1341.png,HER2(+)
+img_1342.png,Luminal B
+img_1343.png,Luminal B
+img_1344.png,Luminal B
+img_1345.png,Luminal B
+img_1346.png,Luminal B
+img_1347.png,Luminal B
+img_1348.png,Luminal B
+img_1349.png,Luminal B
+img_1350.png,Luminal B
+img_1351.png,Luminal B
+img_1352.png,HER2(+)
+img_1353.png,Luminal B
+img_1354.png,Luminal B
+img_1355.png,Luminal B
+img_1356.png,Luminal B
+img_1357.png,HER2(+)
+img_1358.png,Luminal B
+img_1359.png,Luminal B
+img_1360.png,Luminal B
+img_1361.png,Luminal B
+img_1362.png,Luminal B
+img_1363.png,Luminal A
+img_1364.png,Luminal B
+img_1365.png,Luminal B
+img_1366.png,Luminal A
+img_1367.png,HER2(+)
+img_1368.png,HER2(+)
+img_1369.png,Luminal B
+img_1370.png,Luminal B
+img_1371.png,Luminal B
+img_1372.png,HER2(+)
+img_1373.png,Luminal A
+img_1374.png,Luminal A
