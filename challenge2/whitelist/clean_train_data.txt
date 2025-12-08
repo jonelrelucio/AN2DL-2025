@@ -34,7 +34,6 @@ img_0042.png
 img_0043.png
 img_0045.png
 img_0046.png
-img_0048.png
 img_0049.png
 img_0050.png
 img_0051.png
