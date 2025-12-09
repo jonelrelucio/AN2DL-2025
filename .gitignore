@@ -9,6 +9,11 @@ challenge2/__pycache__
 challenge2/cache
 challenge2/models/*.pt
 challenge2/clean_train_data/
+challenge2/patches/*.png
+challenge2/test_patches/*.png
+challenge2/models
+challenge2/saved_models
+challenge2/submissions
 
 compute_delete.py
 img_to_txt.py
