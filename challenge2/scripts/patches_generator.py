@@ -1,6 +1,7 @@
 """
 Breast Cancer Histopathology Patch Generator
 Extracts patches from images with quality filtering and multi-tier fallback system.
+WITH CLASS BALANCING
 """
 
 import os
@@ -10,7 +11,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import time
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 # =============================================================================
 # CONFIGURATION
@@ -26,7 +27,7 @@ PATCH_LABEL_CSV = "challenge2/label_patches.csv"
 # Patch extraction parameters
 INPUT_SIZE = 128
 STRIDE = 64
-MAX_PATCHES_PER_IMAGE = 5
+MAX_PATCHES_PER_IMAGE = 5  # Default max (will be adjusted per class for balancing)
 MIN_PATCHES_PER_IMAGE = 1
 
 # Quality thresholds
@@ -44,6 +45,12 @@ NUM_PATCHES_FALLBACK = 4
 DEBUG_MODE = True
 DEBUG_IMAGE_ID = "0002"
 SAVE_DEBUG_VISUALIZATIONS = True
+
+# CLASS BALANCING PARAMETERS
+BALANCE_CLASSES = True  # Enable/disable class balancing
+BALANCE_STRATEGY = "hybrid"  # "oversample", "undersample", or "hybrid"
+REALISTIC_BALANCING = True  # Adjust targets based on achievable patches
+TARGET_PATCHES_PER_CLASS = None  # Auto-calculate if None
 
 # =============================================================================
 # GLOBAL STATISTICS TRACKER
@@ -68,8 +75,12 @@ class ExtractionStats:
         self.patches_per_image_list = []
         
         # Edge case tracking
-        self.barely_passed = []  # Patches that barely passed thresholds
-        self.barely_failed = []  # Patches that barely failed thresholds
+        self.barely_passed = []
+        self.barely_failed = []
+        
+        # Class balancing tracking
+        self.class_targets = {}
+        self.class_max_patches = {}
         
     def add_candidate(self, img_id, y, x, mask_overlap, tissue_frac, variance, quality_score):
         """Record a candidate patch."""
@@ -79,7 +90,6 @@ class ExtractionStats:
         self.tissue_fractions.append(tissue_frac)
         self.variances.append(variance)
         
-        # Track edge cases
         if (MASK_OVERLAP_THRESH <= mask_overlap < MASK_OVERLAP_THRESH + 0.05 or
             TISSUE_FRACTION_THRESH <= tissue_frac < TISSUE_FRACTION_THRESH + 0.05 or
             VARIANCE_THRESH <= variance < VARIANCE_THRESH + 5):
@@ -95,7 +105,6 @@ class ExtractionStats:
         """Record a rejected patch."""
         if reason == 'mask':
             self.mask_failures += 1
-            # Track near-misses
             if mask_overlap and MASK_OVERLAP_THRESH - 0.05 <= mask_overlap < MASK_OVERLAP_THRESH:
                 self.barely_failed.append({
                     'img_id': img_id, 'y': y, 'x': x,
@@ -173,10 +182,12 @@ class ExtractionStats:
             print(f"\n📋 PER-CLASS STATISTICS:")
             for cls, stats in sorted(self.per_class_stats.items()):
                 avg_patches = stats['patches'] / max(stats['images'], 1)
+                target = self.class_targets.get(cls, 'N/A')
+                max_patches = self.class_max_patches.get(cls, 'N/A')
                 print(f"   {cls}:")
                 print(f"      Images: {stats['images']}")
-                print(f"      Patches: {stats['patches']}")
-                print(f"      Avg patches/image: {avg_patches:.2f}")
+                print(f"      Patches: {stats['patches']} (target: {target})")
+                print(f"      Avg patches/image: {avg_patches:.2f} (max: {max_patches})")
 
 # Global stats object
 stats = ExtractionStats()
@@ -277,8 +288,124 @@ def load_labels(csv_path):
     
     return dict(zip(df["clean_id"], df[label_col]))
 
+
+def estimate_achievable_patches(train_ids, id_to_label):
+    """
+    Do a quick pre-scan to estimate how many patches each class can realistically generate.
+    """
+    print("\n🔍 Pre-scanning to estimate achievable patches...")
+    
+    class_potential = defaultdict(list)
+    
+    for img_id in train_ids[:50]:  # Sample first 50 images
+        if img_id not in id_to_label:
+            continue
+            
+        label = id_to_label[img_id]
+        img_path = os.path.join(TRAIN_FOLDER, f"img_{img_id}.png")
+        mask_path = os.path.join(TRAIN_FOLDER, f"mask_{img_id}.png")
+        
+        img_bgr = cv2.imread(img_path)
+        if img_bgr is None:
+            continue
+        
+        img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB) if img_bgr.ndim == 3 else cv2.cvtColor(img_bgr, cv2.COLOR_GRAY2RGB)
+        mask_gray = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
+        
+        if mask_gray is None:
+            continue
+        
+        # Quick candidate count
+        points = cv2.findNonZero(mask_gray)
+        if points is None:
+            class_potential[label].append(1)
+            continue
+        
+        bx, by, bw, bh = cv2.boundingRect(points)
+        H, W = img_rgb.shape[:2]
+        
+        start_y = max(0, by - STRIDE)
+        end_y = min(H - INPUT_SIZE, by + bh + STRIDE)
+        start_x = max(0, bx - STRIDE)
+        end_x = min(W - INPUT_SIZE, bx + bw + STRIDE)
+        
+        candidates = 0
+        for y in range(start_y, end_y + 1, STRIDE):
+            for x in range(start_x, end_x + 1, STRIDE):
+                mask_patch = mask_gray[y:y+INPUT_SIZE, x:x+INPUT_SIZE]
+                if (mask_patch > 0).mean() >= MASK_OVERLAP_THRESH:
+                    patch_rgb = img_rgb[y:y+INPUT_SIZE, x:x+INPUT_SIZE]
+                    passes, _, _ = patch_has_tissue(patch_rgb, TISSUE_FRACTION_THRESH, VARIANCE_THRESH)
+                    if passes:
+                        candidates += 1
+        
+        class_potential[label].append(min(candidates, 10))
+    
+    # Estimate for all images
+    class_estimates = {}
+    class_counts = Counter([id_to_label[img_id] for img_id in train_ids if img_id in id_to_label])
+    
+    for cls in class_counts:
+        if cls in class_potential and class_potential[cls]:
+            avg_per_img = np.mean(class_potential[cls])
+            estimated_total = int(class_counts[cls] * avg_per_img)
+            class_estimates[cls] = estimated_total
+            print(f"   {cls}: ~{avg_per_img:.1f} patches/img → ~{estimated_total} total achievable")
+        else:
+            class_estimates[cls] = class_counts[cls] * 3  # Conservative estimate
+    
+    return class_estimates
+
+def calculate_class_balancing_params(train_ids, id_to_label):
+    """Calculate balanced patch extraction parameters."""
+    class_counts = Counter([id_to_label[img_id] for img_id in train_ids if img_id in id_to_label])
+    
+    print("\n" + "="*70)
+    print("CLASS BALANCING ANALYSIS")
+    print("="*70)
+    print(f"\nImage distribution:")
+    for cls, count in sorted(class_counts.items()):
+        print(f"   {cls}: {count} images")
+    
+    # Get realistic estimates
+    if REALISTIC_BALANCING:
+        achievable_patches = estimate_achievable_patches(train_ids, id_to_label)
+        # Target: maximum achievable from minority class
+        target_patches_global = max(achievable_patches.values())
+    else:
+        # Original logic
+        if BALANCE_STRATEGY == "oversample":
+            max_class_count = max(class_counts.values())
+            target_patches_global = TARGET_PATCHES_PER_CLASS or (max_class_count * MAX_PATCHES_PER_IMAGE)
+        elif BALANCE_STRATEGY == "undersample":
+            min_class_count = min(class_counts.values())
+            target_patches_global = TARGET_PATCHES_PER_CLASS or (min_class_count * MAX_PATCHES_PER_IMAGE)
+        else:
+            avg_class_count = sum(class_counts.values()) / len(class_counts)
+            target_patches_global = TARGET_PATCHES_PER_CLASS or int(avg_class_count * MAX_PATCHES_PER_IMAGE)
+    
+    class_max_patches = {}
+    for cls, img_count in class_counts.items():
+        patches_per_img = target_patches_global / img_count
+        patches_per_img = max(MIN_PATCHES_PER_IMAGE, min(10, int(np.ceil(patches_per_img))))
+        class_max_patches[cls] = patches_per_img
+    
+    print(f"\nBalancing strategy: {BALANCE_STRATEGY.upper()}")
+    print(f"Target patches per class: {target_patches_global}")
+    print(f"\nMax patches per image (by class):")
+    for cls, max_patches in sorted(class_max_patches.items()):
+        expected_total = class_counts[cls] * max_patches
+        achievable = achievable_patches.get(cls, '?') if REALISTIC_BALANCING else '?'
+        print(f"   {cls}: {max_patches} patches/image → ~{expected_total} target (~{achievable} achievable)")
+    
+    stats.class_targets = {cls: target_patches_global for cls in class_counts}
+    stats.class_max_patches = class_max_patches
+    
+    return class_max_patches
+
+
 # =============================================================================
-# VISUALIZATION FUNCTIONS
+# VISUALIZATION FUNCTIONS (keeping existing ones)
 # =============================================================================
 
 def visualize_saved_patches(img_id, img_rgb, mask_gray, saved_patches, save_path=None):
@@ -299,7 +426,6 @@ def visualize_saved_patches(img_id, img_rgb, mask_gray, saved_patches, save_path
         patch = img_rgb[y:y+INPUT_SIZE, x:x+INPUT_SIZE]
         patch_mask = mask_gray[y:y+INPUT_SIZE, x:x+INPUT_SIZE]
         
-        # Calculate metrics
         mask_overlap = (patch_mask > 0).mean()
         _, tissue_frac, variance = patch_has_tissue(patch, TISSUE_FRACTION_THRESH, VARIANCE_THRESH)
         
@@ -308,7 +434,6 @@ def visualize_saved_patches(img_id, img_rgb, mask_gray, saved_patches, save_path
                            fontsize=10)
         axes[idx].axis('off')
     
-    # Hide unused subplots
     for idx in range(n_patches, len(axes)):
         axes[idx].axis('off')
     
@@ -325,7 +450,6 @@ def visualize_quality_distributions(save_path=None):
     """Visualize distributions of quality metrics."""
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
     
-    # Quality scores
     axes[0, 0].hist(stats.quality_scores, bins=30, color='green', alpha=0.7, edgecolor='black')
     axes[0, 0].axvline(np.mean(stats.quality_scores), color='red', linestyle='--', label=f'Mean: {np.mean(stats.quality_scores):.3f}')
     axes[0, 0].set_title('Quality Score Distribution', fontweight='bold')
@@ -334,7 +458,6 @@ def visualize_quality_distributions(save_path=None):
     axes[0, 0].legend()
     axes[0, 0].grid(True, alpha=0.3)
     
-    # Mask overlaps
     axes[0, 1].hist(stats.mask_overlaps, bins=30, color='blue', alpha=0.7, edgecolor='black')
     axes[0, 1].axvline(MASK_OVERLAP_THRESH, color='red', linestyle='--', label=f'Threshold: {MASK_OVERLAP_THRESH}')
     axes[0, 1].axvline(np.mean(stats.mask_overlaps), color='orange', linestyle='--', label=f'Mean: {np.mean(stats.mask_overlaps):.3f}')
@@ -344,7 +467,6 @@ def visualize_quality_distributions(save_path=None):
     axes[0, 1].legend()
     axes[0, 1].grid(True, alpha=0.3)
     
-    # Tissue fractions
     axes[1, 0].hist(stats.tissue_fractions, bins=30, color='purple', alpha=0.7, edgecolor='black')
     axes[1, 0].axvline(TISSUE_FRACTION_THRESH, color='red', linestyle='--', label=f'Threshold: {TISSUE_FRACTION_THRESH}')
     axes[1, 0].axvline(np.mean(stats.tissue_fractions), color='orange', linestyle='--', label=f'Mean: {np.mean(stats.tissue_fractions):.3f}')
@@ -354,7 +476,6 @@ def visualize_quality_distributions(save_path=None):
     axes[1, 0].legend()
     axes[1, 0].grid(True, alpha=0.3)
     
-    # Variances
     axes[1, 1].hist(stats.variances, bins=30, color='orange', alpha=0.7, edgecolor='black')
     axes[1, 1].axvline(VARIANCE_THRESH, color='red', linestyle='--', label=f'Threshold: {VARIANCE_THRESH}')
     axes[1, 1].axvline(np.mean(stats.variances), color='blue', linestyle='--', label=f'Mean: {np.mean(stats.variances):.1f}')
@@ -382,7 +503,6 @@ def visualize_edge_cases(img_rgb_dict, mask_gray_dict, save_path=None):
     
     fig, axes = plt.subplots(2, 5, figsize=(20, 8))
     
-    # Show barely passed patches
     for idx in range(5):
         if idx < len(stats.barely_passed):
             case = stats.barely_passed[idx]
@@ -399,7 +519,6 @@ def visualize_edge_cases(img_rgb_dict, mask_gray_dict, save_path=None):
         else:
             axes[0, idx].axis('off')
     
-    # Show barely failed patches
     for idx in range(5):
         if idx < len(stats.barely_failed):
             case = stats.barely_failed[idx]
@@ -443,19 +562,16 @@ def visualize_mask_density(img_id, img_rgb, mask_gray, saved_patches=None, save_
     
     fig, axes = plt.subplots(2, 2, figsize=(16, 14))
     
-    # Plot 1: Original image
     axes[0, 0].imshow(img_rgb)
     axes[0, 0].set_title(f"Image {img_id}", fontsize=14, fontweight='bold')
     axes[0, 0].axis('off')
     
-    # Plot 2: Mask with bounding box
     axes[0, 1].imshow(mask_gray, cmap='gray')
     rect = Rectangle((bx, by), bw, bh, linewidth=2, edgecolor='red', facecolor='none')
     axes[0, 1].add_patch(rect)
     axes[0, 1].set_title("Mask (Red = Bounding Box)", fontsize=14, fontweight='bold')
     axes[0, 1].axis('off')
     
-    # Plot 3: Density heatmap
     grid_size = 32
     density_h = H // grid_size + 1
     density_w = W // grid_size + 1
@@ -477,7 +593,6 @@ def visualize_mask_density(img_id, img_rgb, mask_gray, saved_patches=None, save_
     axes[1, 0].set_xlabel('X (32-pixel blocks)')
     axes[1, 0].set_ylabel('Y (32-pixel blocks)')
     
-    # Plot 4: Scanning grid WITH SAVED PATCHES HIGHLIGHTED
     img_with_grid = img_rgb.copy()
     
     start_y = max(0, by - STRIDE)
@@ -517,7 +632,6 @@ def visualize_mask_density(img_id, img_rgb, mask_gray, saved_patches=None, save_
     
     plt.show()
     
-    # Print statistics
     mask_pixels = np.sum(mask_gray > 0)
     bbox_area = bw * bh
     mask_density = mask_pixels / bbox_area if bbox_area > 0 else 0
@@ -538,7 +652,7 @@ def visualize_mask_density(img_id, img_rgb, mask_gray, saved_patches=None, save_
 # MAIN PATCH EXTRACTION LOGIC
 # =============================================================================
 
-def extract_patches_from_image(img_id, img_rgb, mask_gray, label, patch_records, debug=False):
+def extract_patches_from_image(img_id, img_rgb, mask_gray, label, patch_records, max_patches_for_class, debug=False):
     """Extract patches from a single image using multi-tier approach."""
     start_time = time.time()
     H, W = img_rgb.shape[:2]
@@ -553,6 +667,7 @@ def extract_patches_from_image(img_id, img_rgb, mask_gray, label, patch_records,
     
     if debug:
         print(f"  Image: {W}×{H}, Mask bbox: ({bx},{by}) {bw}×{bh}")
+        print(f"  Max patches for this class: {max_patches_for_class}")
     
     # --- TIER 1: Standard Grid Extraction ---
     candidate_patches = []
@@ -585,7 +700,6 @@ def extract_patches_from_image(img_id, img_rgb, mask_gray, label, patch_records,
                 stats.add_rejection(img_id, y, x, 'tissue', tissue_frac=tissue_frac, variance=variance)
                 continue
             
-            # Calculate quality score
             mask_score = mask_overlap
             var_score = variance
             quality_score = mask_score * 0.7 + (var_score / 1000.0) * 0.3
@@ -593,10 +707,10 @@ def extract_patches_from_image(img_id, img_rgb, mask_gray, label, patch_records,
             stats.add_candidate(img_id, y, x, mask_overlap, tissue_frac, variance, quality_score)
             candidate_patches.append((y, x, quality_score))
     
-    # Select top quality patches
+    # Select top quality patches (using class-specific max)
     if len(candidate_patches) > 0:
         candidate_patches.sort(key=lambda p: p[2], reverse=True)
-        selected = candidate_patches[:MAX_PATCHES_PER_IMAGE]
+        selected = candidate_patches[:max_patches_for_class]
         
         if debug:
             print(f"  ✓ Standard extraction: {len(selected)} patches from {len(candidate_patches)} candidates")
@@ -626,7 +740,7 @@ def extract_patches_from_image(img_id, img_rgb, mask_gray, label, patch_records,
     if num_labels > 1:
         object_areas = blob_stats[1:, cv2.CC_STAT_AREA]
         sorted_indices = np.argsort(object_areas)[::-1]
-        top_n_indices = sorted_indices[:min(NUM_PATCHES_FALLBACK, MAX_PATCHES_PER_IMAGE)]
+        top_n_indices = sorted_indices[:min(NUM_PATCHES_FALLBACK, max_patches_for_class)]
         
         for idx in top_n_indices:
             label_idx = idx + 1
@@ -691,16 +805,16 @@ def extract_patches_from_image(img_id, img_rgb, mask_gray, label, patch_records,
 def main():
     """Main execution function."""
     
-    # Setup
     os.makedirs(PATCHES_DIR, exist_ok=True)
     
     print("="*70)
-    print("BREAST CANCER PATCH GENERATOR")
+    print("BREAST CANCER PATCH GENERATOR (CLASS-BALANCED)")
     print("="*70)
     print(f"Patch size: {INPUT_SIZE}×{INPUT_SIZE}, Stride: {STRIDE}")
-    print(f"Patches per image: {MIN_PATCHES_PER_IMAGE}-{MAX_PATCHES_PER_IMAGE}")
+    print(f"Patches per image: {MIN_PATCHES_PER_IMAGE}-{MAX_PATCHES_PER_IMAGE} (default)")
     print(f"Thresholds: Mask≥{MASK_OVERLAP_THRESH*100:.0f}%, "
           f"Tissue≥{TISSUE_FRACTION_THRESH*100:.0f}%, Var≥{VARIANCE_THRESH}")
+    print(f"Class balancing: {'ENABLED' if BALANCE_CLASSES else 'DISABLED'}")
     print("="*70 + "\n")
     
     # Load data
@@ -721,11 +835,19 @@ def main():
     else:
         train_ids = sorted(train_ids_all, key=int)
     
-    print(f"Processing {len(train_ids)} images...\n")
+    # Calculate class balancing parameters
+    if BALANCE_CLASSES:
+        class_max_patches = calculate_class_balancing_params(train_ids, id_to_label)
+    else:
+        # Use default max for all classes
+        unique_classes = set(id_to_label.values())
+        class_max_patches = {cls: MAX_PATCHES_PER_IMAGE for cls in unique_classes}
+    
+    print(f"\nProcessing {len(train_ids)} images...\n")
     
     # Extract patches
     patch_records = []
-    img_rgb_cache = {}  # For edge case visualization
+    img_rgb_cache = {}
     mask_gray_cache = {}
     
     for idx, img_id in enumerate(train_ids):
@@ -761,13 +883,16 @@ def main():
             continue
         
         # Cache for visualizations
-        if len(img_rgb_cache) < 20:  # Keep first 20 images for edge case viz
+        if len(img_rgb_cache) < 20:
             img_rgb_cache[img_id] = img_rgb
             mask_gray_cache[img_id] = mask_gray
         
+        # Get max patches for this image's class
+        max_patches_for_this_image = class_max_patches.get(label, MAX_PATCHES_PER_IMAGE)
+        
         # Extract patches
         num_patches = extract_patches_from_image(
-            img_id, img_rgb, mask_gray, label, patch_records, debug=debug_this
+            img_id, img_rgb, mask_gray, label, patch_records, max_patches_for_this_image, debug=debug_this
         )
         
         if (idx + 1) % 100 == 0:
@@ -812,11 +937,9 @@ def main():
         print("GENERATING VISUALIZATIONS")
         print("="*70)
         
-        # Visualization 1: Quality distributions
         if stats.quality_scores:
             visualize_quality_distributions(save_path="challenge2/quality_distributions.png")
         
-        # Visualization 2: Debug image mask density
         debug_img_path = os.path.join(TRAIN_FOLDER, f"img_{DEBUG_IMAGE_ID}.png")
         debug_mask_path = os.path.join(TRAIN_FOLDER, f"mask_{DEBUG_IMAGE_ID}.png")
         
@@ -825,7 +948,6 @@ def main():
             img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
             mask_gray = cv2.imread(debug_mask_path, cv2.IMREAD_GRAYSCALE)
             
-            # Get saved patches for this image
             saved_patches_for_img = []
             for filename, _ in patch_records:
                 if f"_{DEBUG_IMAGE_ID}_" in filename:
@@ -846,14 +968,12 @@ def main():
                 save_path=f"challenge2/mask_density_{DEBUG_IMAGE_ID}.png"
             )
             
-            # Visualization 3: All saved patches from debug image
             visualize_saved_patches(
                 DEBUG_IMAGE_ID, img_rgb, mask_gray,
                 saved_patches=saved_patches_for_img,
                 save_path=f"challenge2/saved_patches_{DEBUG_IMAGE_ID}.png"
             )
         
-        # Visualization 4: Edge cases
         if stats.barely_passed or stats.barely_failed:
             visualize_edge_cases(
                 img_rgb_cache, mask_gray_cache,
